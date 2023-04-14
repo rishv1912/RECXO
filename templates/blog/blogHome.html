@@ -2,7 +2,31 @@
 {% block blogactive %}active{% endblock blogactive %} {% block body %}
 
 <div class="container my-3">
-  <h2>Coding,AI,ML,DL Articles</h2>
+  <span>
+    <h2>Coding,AI,ML,DL Articles</h2>
+  </span>
+  <span>
+    <ul class="navbar-nav ml-auto mx-1">
+      <li class="nav-item dropdown ">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Choose article
+        </a>
+        <ul class="dropdown-menu ">
+          <li><a class="dropdown-item" href="#">AI (Artificial Intelligence)</a></li>
+          <li><a class="dropdown-item" href="#">ML (Machine Learning)</a></li>
+          <li><a class="dropdown-item" href="#">dL (Deep Learning Learning)</a></li>
+          <li><a class="dropdown-item" href="#">ML (Machine Learning)</a></li>
+          <li><a class="dropdown-item" href="#">Technology</a></li>
+          <li><a class="dropdown-item" href="#">Science</a></li>
+          <li><a class="dropdown-item" href="#">Education</a></li>
+          <li><a class="dropdown-item" href="#">Experience</a></li>
+          <li><a class="dropdown-item" href="#">Travelling</a></li>
+
+          <li><hr class="dropdown-divider"></li>
+        </ul>
+      </li>
+    </ul>
+  </span>
   {% for post in allPosts %}
   <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
     <div class="col p-4 d-flex flex-column position-static">
