@@ -6,9 +6,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth import  authenticate
 # Create your views here.
 
-# superuse name - coder ,pass - man9 , email - rapx
-
-
 def blogHome(request):
     allPosts = Post.objects.all()
     context = {'allPosts': allPosts}
@@ -16,6 +13,8 @@ def blogHome(request):
   
 def blogPost(request, slug):
     post = Post.objects.filter(slug=slug).first()
+    post.views= post.views+1
+    post.save()
     comments = BlogComment.objects.filter(post=post,parent=None)
     replies= BlogComment.objects.filter(post=post).exclude(parent=None)
     replyDict={}
