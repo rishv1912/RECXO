@@ -42,20 +42,20 @@
   <h2 style=" text-align: center;font-size: 60px;font-family: 'Poppins', sans-serif;">Explore</h2>
   <div class="sc-jNJNQp iMrZpd">
     <div class="sc-hlLBRy cqOGbR" style="transform: translateY(50px) translateZ(0px)">
-      <div src="../static/illustrations/consultant-3.png"class="sc-eKJbhj c1-img-1"></div>
+      <div src="{% static 'illustrations/consultant-3.png' %}"class="sc-eKJbhj c1-img-1"></div>
       <div class="sc-bTTELM MmSvE">
         <div class="sc-kImNAt kHFwZP">Personal Consultant</div>
       </div>
     </div>
     <div class="sc-hlLBRy cqOGbR" style="transform: translateY(50px) translateZ(0px)">
-      <div src="../static/illustrations/consultant-5.webp" class="sc-eKJbhj c1-img-2"></div>
+      <div src="{% static 'illustrations/consultant-5.webp' %}" class="sc-eKJbhj c1-img-2"></div>
       <div class="sc-bTTELM MmSvE">
         <div class="sc-kImNAt kHFwZP">Giving Your Touch</div>
 
       </div>
     </div>
     <div class="sc-hlLBRy cqOGbR" style="transform: translateY(50px) translateZ(0px)">
-      <div src="../static/illustrations/consultant-8.png" class="sc-eKJbhj c1-img-3"></div>
+      <div src="{% static 'illustrations/consultant-8.png' %}" class="sc-eKJbhj c1-img-3"></div>
       <div class="sc-bTTELM MmSvE">
         <div class="sc-kImNAt kHFwZP">Weekly Updates</div>
       </div>
@@ -68,7 +68,7 @@
       </div>
     </div>
     <div class="sc-hlLBRy cqOGbR" style="transform: translateY(50px) translateZ(0px)">
-      <div src="../static/illustrations/consultant-6.png" class="sc-eKJbhj c1-img-5"></div>
+      <div src="{% static 'illustrations/consultant-6.png' %}" class="sc-eKJbhj c1-img-5"></div>
       <div class="sc-bTTELM MmSvE">
         <div class="sc-kImNAt kHFwZP">Profitable Payments</div>
       </div>
@@ -123,12 +123,13 @@
 
   <!-- section 3 ends -->
 </div>
+<!-- this code is copied from github for the auto typing words in the starting of website -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
-<!-- this code is copied from github for the auto typing words in the starting of website -->
+<!-- code for auto typing word -->
 <script>
   var typed = new Typed(".auto-input", {
-    strings: ["Websites", "Apps", "Personal Softwares", "Android and iOS"],
+    strings: ["Websites", "Apps", "Personal Softwares", "Android and iOS", 'AI/ML'],
     typeSpeed: 50,
     backSpeed: 20,
     loop: true,
