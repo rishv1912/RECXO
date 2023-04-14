@@ -1,0 +1,284 @@
+/* only nav bar and footer css will be written . Cause it is for base page */
+
+/* colors will be used white , black ,green ,#66FCF1
+
+white : whole website 
+black : text 
+green : button, highlighting and other 
+#55cb84: name and rarely
+*/
+
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,200&family=Oxygen:wght@300&family=Poppins&display=swap');
+
+/* font-family: 'Mulish', sans-serif;     used for NAME AND ETC ;
+font-family: 'Oxygen', sans-serif ;  EXPLATION AND INTRO;
+font-family: 'Poppins', sans-serif; QUESTION AND HIGHLIGHTING */
+
+/* image sources 
+undraw 
+humaaans 
+manypixels
+
+
+
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Oxygen', sans-serif;
+}
+body a{
+    text-decoration: none;
+}
+
+/* nav bar  starts*/
+
+nav {
+    background-color: black;
+    height: 90px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+}
+
+nav .nav-items label.name {
+    color: #55cb84;
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 80px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-items {
+    justify-content: flex-end;
+    display: flex;
+    max-width: 1450px;
+    margin: 0px auto;
+}
+
+nav .nav-items {
+
+    display: flex;
+    gap: 15rem;
+    justify-content: space-around;
+}
+
+
+
+.nav-items ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+.nav-items ul li a {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    /* font-weight: 500; */
+    padding: 7px 13px;
+   
+}
+
+nav .item a:hover {
+    transition: .5s;
+    text-decoration: none;
+    color: #55cb84;
+}
+
+.nav-items .item a.active {
+    color: #55cb84;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.signin {
+    /* margin-left: 20rem ; */
+    padding: 15px 40px;
+    font-size: 17px;
+    background-color: #55cb84;
+    color: white;
+    border: rgb(83, 195, 8) solid 1.5px;
+    border-radius: 0.5rem;
+
+}
+.nav-items .nav-links .hamburber{
+    display: none;
+    visibility:hidden;
+}
+
+/* nav bar ends  */
+
+/* footer starts */
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer {
+    position: static;
+    margin-top: 10px;
+    left: 0;
+    /* bottom: 0; */
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #55cb84;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    padding: 5px 0;
+    font-weight: 500;
+    position: relative;
+}
+
+/* .footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+} */
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+
+    text-transform: capitalize;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    /* color: #bbbbbb; */
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #55cb84;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 8px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.copyright {
+    padding: 30px 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+
+}
+
+/*responsive*/
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 821px) {
+    .nav-items .nav-links{
+        display: none;
+    }
+    .nav-items .nav-links .hamburber{
+        display: block;
+    }
+
+}
+
+
+/* footer ends */
+
+/* faltu */
+.iMrZpd {
+    max-width: 115rem;
+    margin: 5rem auto 0px;
+    border-radius: 2.4rem;
+    padding: 3rem 6.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    justify-content: center;
+    gap: 4.5rem;
+}
+.cqOGbR {
+    max-width: 30rem;
+    width: 100%;
+    height: 36rem;
+    padding: 4rem 2rem;
+    background: linear-gradient(144.83deg, rgb(16, 30, 38) 0%, rgb(18, 42, 39) 48.66%, rgb(17, 36, 38) 100%);
+    filter: drop-shadow(rgba(36, 166, 103, 0.1) 0px 6px 61px);
+    border-radius: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
