@@ -61,13 +61,25 @@
               <li>Email support</li>
               <li>Help center access</li>
             </ul>
+
+            {% if user.is_authenticated %}
             <button
-              type="button"
-              class="w-100 btn btn-lg text-bg-mine fs"
+            type="button"
+            class="w-100 btn btn-lg text-bg-mine fs"
+            >
+            <a href="/#">Start</a>
+            <!-- Sign up for free -->
+          </button>
+            {% else %}
+
+            <button
+            type="button"
+            class="w-100 btn btn-lg text-bg-mine fs"
             >
             <a href="/Login">Sign up for free</a>
-              <!-- Sign up for free -->
-            </button>
+            <!-- Sign up for free -->
+          </button>
+          {% endif %}
           </div>
         </div>
       </div>
