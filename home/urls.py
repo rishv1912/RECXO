@@ -26,7 +26,7 @@ urlpatterns = [
 
     # order related
     path("Orders/", views.orders, name="orders"),
-    path("orderPlace/", views.placeOrder, name="placed order"),
+    path("orderPlace/", views.placeOrder, name="placedorder"),
 
     # profile related
     path("Profile/", views.profile, name="profile"),

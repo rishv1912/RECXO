@@ -55,7 +55,7 @@ def orders(request):
             order.save()
             # sending the message that your order has been placed
             messages.success(request, 'Your order has been placed')
-
+            return redirect('placedorder')
         # rendering the orders page 
         return render(request, 'home/order/orders.html')
     else:
