@@ -76,19 +76,29 @@ nav .nav-items {
 
 
 
-.nav-items ul li {
+.nav-items .item {
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
 }
 
-.nav-items ul li a {
+.nav-items ._nav-items {
     color: #fff;
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
     /* font-weight: 500; */
     padding: 7px 13px;
-   
+}
+
+/* making the dropdown section different from the other li  */
+.nav-items #item-dropdown{
+    color: #fff;
+    display: inline-block;
+    margin: 0 5px;
+}
+.nav-items #item-dropdown .dropdown-menu li:hover{
+    transition: .5s;
+    color: #55cb84;
 }
 
 nav .item a:hover {
@@ -117,7 +127,7 @@ nav .item a:hover {
 
 .signin {
     /* margin-left: 20rem ; */
-    padding: 15px 40px;
+    padding: 10px 20px;
     font-size: 17px;
     background-color: #55cb84;
     color: white;
@@ -129,6 +139,16 @@ nav .item a:hover {
     display: none;
     visibility:hidden;
 }
+
+/* dropdown when screen shrinks */
+.nav-items #min-scrn-dropdown{
+    color: #fff;
+    display: inline-block;
+    position: absolute;
+    visibility:hidden;
+    margin: 0 5px;
+}
+
 
 /* nav bar ends  */
 
@@ -245,11 +265,25 @@ nav .item a:hover {
 }
 
 @media (max-width: 821px) {
-    .nav-items .nav-links{
+    .nav-items .nav-links .item{
         display: none;
     }
-    .nav-items .nav-links .hamburber{
-        display: block;
+    .nav-items .nav-links #item-dropdown{
+        display: none;
+    }
+    .nav-items #min-scrn-dropdown{
+        color: #fff;
+        display: inline-block;
+        position: relative;
+        right: 50%;
+        top:50%;
+        visibility:visible;
+        margin: 0 5px;
+    }
+    .nav-items .dropdown-toggle{
+        position: relative;
+        top:50%;
+       
     }
 
 }
