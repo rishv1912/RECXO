@@ -10,8 +10,6 @@ class Home(models.Model):
     fullname = models.TextField(max_length=20)
     username = models.TextField(max_length=20)
     
-
-
 class Contact(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=70)
@@ -20,7 +18,6 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
-
 
 class Order(models.Model):
     soft_name = models.CharField(max_length=120)
@@ -31,7 +28,6 @@ class Order(models.Model):
 
     def __str__(self):
         return self.soft_name
-
 
 class GetJob(models.Model):
     name = models.CharField(max_length=120)

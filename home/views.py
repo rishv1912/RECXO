@@ -77,7 +77,6 @@ def ord_cancel(request):
 
 # contact related
 
-# this function is for rendering the contact page
 def contact(request):
     '''this function is for rendering the contact page'''
 
@@ -98,7 +97,6 @@ def contact(request):
         # if user is not logined the showing a message , to login to contact us
         messages.error(request, 'Please login to contact us ')
         return render(request, 'home/contact.html')
-
 
 # subscription related
 
@@ -173,14 +171,14 @@ def loginUser(request):
     if request.method == 'POST':
         username = request.POST.get('loginUsername')
         password = request.POST.get('loginPassword')
-        print(username, password)
+        email = request.POST.get('loginUsername')
         # check if user has entered correct credentials
-        user = authenticate(username=username, password=password)
+        user = authenticate(username=username, password=password,email=email)
 
         # conditions logging in a user 
         if user is not None:
             login(request, user)
-            messages.success(request, 'Successfully Logged In as '+ str({request.user.username}))
+            messages.success(request, f'Successfully Logged In as {request.user.username}')
             return redirect('/')
         else:
             messages.error(request, 'Login Credentials didn\'t match')

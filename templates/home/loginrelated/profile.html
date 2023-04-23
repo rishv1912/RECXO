@@ -2,6 +2,6 @@
 {% block title %}Profile {{request.user}}{% endblock title %}
 {% block body %}
 <h1>This is profile of user</h1>
-
-
+<h1>User Name : {{request.user}}</h1>
+<h1>Full Name : {{request.user.fullname}}</h1>
 {% endblock body %}

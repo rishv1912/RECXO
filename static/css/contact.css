@@ -48,6 +48,9 @@ body {
     align-items: center;
     z-index: -1;
 }
+a{
+    text-decoration: none;
+}
 
 .bord {
     border: 2px solid black;
@@ -237,6 +240,7 @@ h2 {
 .other-links ul li a {
     color: white;
     margin: 0 8px;
+    text-decoration: none;
 }
 
 .other-links ul li a:hover {
