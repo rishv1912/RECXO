@@ -7,7 +7,7 @@ from datetime import datetime
 # Create your views here.
 
 
-# superuser name - recxo , email - regular, password - instagram
+# superuser name - recxo , email - regular, password - recxo098
 # user for experiment name - jay, password - jignesh6^^9
 
 # HTML 

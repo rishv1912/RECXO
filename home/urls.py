@@ -31,9 +31,6 @@ urlpatterns = [
     # profile related
     path("Profile/", views.profile, name="profile"),
 
-
-
-
     # company related
     path("Term_Condition/", views.term_and_cond, name="Terms and Condition"),
     path("Privacy_Policy/", views.priv_policy, name="Privacy Policy"),
