@@ -101,17 +101,17 @@ nav .nav-items {
     color: #55cb84;
 }
 
-nav .item a:hover {
+nav ._nav-items a:hover {
     transition: .5s;
     text-decoration: none;
     color: #55cb84;
 }
 
-.nav-items .item a.active {
+/* .nav-items .item ._nav-items a.active {
     color: #55cb84;
-}
+} */
 
-.checkbtn {
+/* .checkbtn {
     font-size: 30px;
     color: white;
     float: right;
@@ -123,9 +123,9 @@ nav .item a:hover {
 
 #check {
     display: none;
-}
+} */
 
-.signin {
+.item .signin {
     /* margin-left: 20rem ; */
     padding: 10px 20px;
     font-size: 17px;

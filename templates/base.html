@@ -13,7 +13,7 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -22,8 +22,12 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="icon" type="image/x-icon" href="{% static 'img/computer-app.webp' %}"/>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{% static 'img/computer-app.webp' %}"
+    />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link rel="stylesheet" href="{% block link %}{% endblock link %}" />
     <link rel="stylesheet" href="{% block link2 %}{% endblock link2 %}" />
   </head>
@@ -41,47 +45,75 @@
           <ul>
             <li class="item"><a class="_nav-items" href="/">Home</a></li>
 
-            <li class="item"><a class="_nav-items" href="/Services">Services</a></li>
-            <li class="item"><a class="_nav-items" href="/Orders">Orders</a></li>
-            <li class="item"><a class="_nav-items" href="/Contact">Contact Us</a></li>
-            <li class="item"><a class="_nav-items" href="/About">About Us</a></li>
+            <li class="item">
+              <a class="_nav-items" href="/Services">Services</a>
+            </li>
+            <li class="item">
+              <a class="_nav-items" href="/Orders">Orders</a>
+            </li>
+            <li class="item">
+              <a class="_nav-items" href="/Contact">Contact Us</a>
+            </li>
+            <li class="item">
+              <a class="_nav-items" href="/About">About Us</a>
+            </li>
 
             {% if user.is_authenticated %}
-            <li  id="item-dropdown">
+            <li id="item-dropdown">
               <ul class="navbar-nav ml-auto mx-1">
-                <li class="nav-item dropdown ">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     Welcome {{request.user}}
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/Profile">Profile</a></li>
-                    <li><a class="dropdown-item" href="{% url 'Logout'%}">Logout</a></li>
+                    <li>
+                      <a class="dropdown-item" href="/Profile">Profile</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'Logout'%}"
+                        >Logout</a
+                      >
+                    </li>
                     <li><a class="dropdown-item" href="/Orders">Orders</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <li><hr class="dropdown-divider" /></li>
                     <li><a class="dropdown-item" href="#">others</a></li>
                   </ul>
                 </li>
               </ul>
             </li>
             {% else %}
-            <li class="item">
+            <li class="item" id="signin">
               <a class="signin" class="_nav-items" href="/Login">Log in</a>
             </li>
-            
+
             {% endif %}
             <li id="min-scrn-dropdown">
               <ul class="navbar-nav ml-auto mx-1">
-                <li class="nav-item dropdown ">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
                     Welcome {{request.user}}
                   </a>
-                  <ul class="dropdown-menu ">
+                  <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/">Home</a></li>
-                    <li><a class="dropdown-item" href="/Services">Services</a></li>
+                    <li>
+                      <a class="dropdown-item" href="/Services">Services</a>
+                    </li>
                     <li><a class="dropdown-item" href="#">Orders</a></li>
                     <li><a class="dropdown-item" href="#">Contact us</a></li>
                     <li><a class="dropdown-item" href="#">About us</a></li>
-                    <li><hr class="dropdown-divider"></li>
+                    <li><hr class="dropdown-divider" /></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                   </ul>
                 </li>
@@ -126,11 +158,13 @@
           <div class="footer-col">
             <h4>beyond</h4>
             <ul>
-              {% comment %} <li><a href="/Services/AI">A.I</a></li>
+              {% comment %}
+              <li><a href="/Services/AI">A.I</a></li>
               <li><a href="/Services/">Courses</a></li>
               <li><a href="/Services/">Products</a></li>
               <li><a href="/Services/">Our Apps</a></li>
-              <li><a href="/Services/">Browser</a></li> {% endcomment %}
+              <li><a href="/Services/">Browser</a></li>
+              {% endcomment %}
               <li><a href="/blog">Blog</a></li>
               <li><a href="/Subscriptions">Subscription Plan</a></li>
             </ul>
@@ -139,7 +173,9 @@
             <h4>follow us</h4>
             <div class="social-links">
               <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
-              <a href="https://twitter.com/RishavAnand1912" target="_blank"><i class="fab fa-twitter"></i></a>
+              <a href="https://twitter.com/RishavAnand1912" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
               <a
                 href="https://www.instagram.com/recxo_12/?next=%2F"
                 target="_blank"
