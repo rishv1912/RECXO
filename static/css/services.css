@@ -45,16 +45,15 @@ body {
     padding: 1px 0;
 }
 
-h3 {
-    font-size: 23px;
-    margin: 0 20px;
-    padding: 10px 5px;
+#soft {
+    font-size: 20px;
+    padding: 10px 2px;
 }
 
 .soft {
     font-size: 17px;
-    margin: 0 40px;
     padding: 0px 10px;
+    text-align: left;
 }
 
 .other-links {
@@ -215,3 +214,22 @@ h3 {
 
 
 }
+
+/* exprementing the code */
+.container {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+  }
+  
+  .content {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .container:hover .content {
+    transform: scale(1.5);
+  }
