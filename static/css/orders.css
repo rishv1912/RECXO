@@ -138,7 +138,7 @@ form textarea {
     resize: none
 }
 
-@property --rotate {
+/* @property --rotate {
     syntax: "<angle>";
     initial-value: 132deg;
     inherits: false;
@@ -240,7 +240,7 @@ form textarea {
     font-weight: bold;
     margin-top: 2rem;
   }
-
+ */
 
 
 

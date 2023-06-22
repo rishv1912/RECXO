@@ -49,7 +49,7 @@ body {
     font-weight: 500;
     font-size: 20px;
     padding: 10px 2px;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .soft {
@@ -81,6 +81,7 @@ body {
     font-size: 17px;
     padding: 7px 13px;
 }
+
 .other-links ul li a:hover {
     transition: .5s;
 }
@@ -129,26 +130,12 @@ body {
     background-repeat: no-repeat;
 }
 
-.c1-img-1 {
-    background: url(../illustrations/consultant-3.png) 0% 0% / 100% no-repeat;
+.visit a {
+    border-radius: 20px;
+    padding: 8px 14px;
+    color: white;
+    background-color: black;
 }
-
-.c1-img-2 {
-    background: url(../illustrations/consultant-5.webp) 0% 0% / 100% no-repeat;
-}
-
-.c1-img-3 {
-    background: url(../illustrations/consultant-8.png) 0% 0% / 100% no-repeat;
-}
-
-.c1-img-4 {
-    background: url(../illustrations/consultant-4.png) 0% 0% / 100% no-repeat;
-}
-
-.c1-img-5 {
-    background: url(../illustrations/consultant-6.png) 0% 0% / 100% no-repeat;
-}
-
 
 
 /* section 2 ends */
@@ -186,27 +173,31 @@ body {
 
 /* media queries */
 @media screen and (max-width : 450px) {
-    
+
     .ser-que {
         font-size: 27px;
         margin: 0 10px;
         font-family: 'Poppins', sans-serif;
     }
+
     .ser-ans {
         font-size: 15px;
         margin: 0 20px;
         padding: 1px 0;
     }
+
     h3 {
         font-size: 20px;
         margin: 0 20px;
         padding: 10px 5px;
     }
+
     .soft {
         font-size: 12px;
         margin: 0 40px;
         padding: 0px 10px;
     }
+
     .li-def {
         font-size: 12px;
         margin: 0 30px;
@@ -216,4 +207,3 @@ body {
 
 
 }
-
