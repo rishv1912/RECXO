@@ -46,8 +46,10 @@ body {
 }
 
 #soft {
+    font-weight: 500;
     font-size: 20px;
     padding: 10px 2px;
+    font-family: 'Poppins',sans-serif;
 }
 
 .soft {
@@ -215,21 +217,3 @@ body {
 
 }
 
-/* exprementing the code */
-.container {
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-  }
-  
-  .content {
-    background-color: blue;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .container:hover .content {
-    transform: scale(1.5);
-  }
