@@ -135,7 +135,8 @@ body {
 form textarea {
     width: 100%;
     height: 232px;
-    resize: none
+    resize: none;
+    padding: 0 5px;
 }
 
 /* @property --rotate {
