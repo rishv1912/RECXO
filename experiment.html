@@ -1,11 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Experiment Recxo</title>
+<title>Software Order Form</title>
 </head>
 <body>
-    
+
+<h2>Software Order Form</h2>
+
+<form action="/submit_order" method="post">
+  <label for="fname">Full Name:</label><br>
+  <input type="text" id="fname" name="fname" required><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" required><br>
+  <label for="address">Address:</label><br>
+  <input type="text" id="address" name="address" required><br>
+  <label for="software">Software:</label><br>
+  <select id="software" name="software">
+    <option value="software1">Software 1</option>
+    <option value="software2">Software 2</option>
+    <option value="software3">Software 3</option>
+  </select><br>
+  <input type="submit" value="Submit Order">
+</form>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order Software</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 30px;
+            padding: 20px;
+        }
+
+        .platform {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+
+        .platform img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .platform h2 {
+            margin-top: 10px;
+        }
+
+        .platform p {
+            color: #666;
+        }
+
+        .order-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .order-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Order Software</h1>
+    </header>
+    <section>
+        <div class="platform">
+            <img src="android.png" alt="Android">
+            <h2>Android App</h2>
+            <p>Order our software for Android devices. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+        <div class="platform">
+            <img src="ios.png" alt="iOS">
+            <h2>iOS App</h2>
+            <p>Order our software for iOS devices. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+    </section>
 </body>
 </html>
