@@ -46,7 +46,7 @@
                     </a>
                     <ul class="dropdown-menu">
                       <li>
-                        <a class="dropdown-item" href="{% url 'profile'%}"
+                        <a class="dropdown-item" href="{% url 'user-profile' request.user.id%}"
                           >Profile</a
                         >
                       </li>

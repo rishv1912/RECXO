@@ -29,7 +29,7 @@ urlpatterns = [
     path("orderplace/", views.placeOrder, name="orderplace"),
 
     # profile related
-    path("profile/", views.profile, name="profile"),
+    path("profile/<str:pk>", views.userProfile, name="user-profile"),
 
     # company related
     path("term-condition/", views.term_and_cond, name="terms-conditions"),
