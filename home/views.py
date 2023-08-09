@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate, logout, login
 from home.models import Contact, Order, GetJob
 from django.contrib import messages
 from datetime import datetime
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
@@ -33,7 +34,7 @@ def projects(request):
     return render(request, 'home/projects.html')
 
 # order related
-
+@login_required(login_url='/login')
 def orders(request):
     '''this function is for rendering the order page'''
 
@@ -63,13 +64,16 @@ def orders(request):
         # if user isn't logined then redirecting the user to the home page
         return redirect('/')
 
+@login_required(login_url='/login')
 def placeOrder(request):
     '''this is the function which we which showing all the info after placing the order '''
     return render(request, 'home/order/orderplace.html')
 
+@login_required(login_url='/login')
 def orderSave(request):
     '''this function is for saving the order we'll have '''
 
+@login_required(login_url='/login')
 def ord_cancel(request):
     '''this function is for canceling the order '''
 
@@ -77,6 +81,7 @@ def ord_cancel(request):
 
 # contact related
 
+@login_required(login_url='/login')
 def contact(request):
     '''this function is for rendering the contact page'''
 
