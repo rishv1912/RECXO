@@ -21,10 +21,15 @@ class Post(models.Model):
 class BlogComment(models.Model):
     sno= models.AutoField(primary_key=True)
     comment=models.TextField()
-    user=models.ForeignKey(User, on_delete=models.CASCADE)
-    post=models.ForeignKey(Post, on_delete=models.CASCADE)
+    user=models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+    post=models.ForeignKey(Post, on_delete=models.CASCADE,null=True)
     parent=models.ForeignKey('self',on_delete=models.CASCADE, null=True )
     timestamp= models.DateTimeField(auto_now=True)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-updated', '-created']
 
     def __str__(self):
         return self.comment[0:13] + "..." + "by " + self.user.username
