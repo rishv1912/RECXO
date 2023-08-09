@@ -12,7 +12,6 @@ from django.contrib.auth.decorators import login_required
 # user for experiment name - jay, password - jignesh6^^9
 
 # HTML 
-
 def index(request):
     '''this function is for rendering the landing page'''
     # return HttpResponse('this is homepage')
