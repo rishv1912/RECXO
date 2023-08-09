@@ -5,13 +5,12 @@ from home import views
 urlpatterns = [
 
     path("", views.index, name="home"),
-    path("About/", views.about, name="about"),
+    path("about/", views.about, name="about"),
     
     # all realted to services
-    path("Services/", views.service, name="services"),
-    path("Services/Projects", views.projects, name="Projects"),
-    path("Services/Job", views.job, name="GetJob"),
-    path("Services/AI", views.ai, name="ai"),
+    path("services/", views.service, name="services"),
+    path("services/projects", views.projects, name="projects"),
+    path("services/job", views.job, name="getjob"),
 
     # login related
     path("login/", views.loginUser, name="login"),
