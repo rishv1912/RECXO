@@ -46,16 +46,16 @@
             <li class="item"><a class="_nav-items" href="/">Home</a></li>
 
             <li class="item">
-              <a class="_nav-items" href="/Services">Services</a>
+              <a class="_nav-items" href="{% url 'services'%}">Services</a>
             </li>
             <li class="item">
-              <a class="_nav-items" href="/Orders">Orders</a>
+              <a class="_nav-items" href="{% url 'orders'%}">Orders</a>
             </li>
             <li class="item">
-              <a class="_nav-items" href="/Contact">Contact Us</a>
+              <a class="_nav-items" href="{% url 'contact'%}">Contact Us</a>
             </li>
             <li class="item">
-              <a class="_nav-items" href="/About">About Us</a>
+              <a class="_nav-items" href="{% url 'about'%}">About Us</a>
             </li>
 
             {% if user.is_authenticated %}
@@ -73,14 +73,20 @@
                   </a>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="/Profile">Profile</a>
+                      <a class="dropdown-item" href="{% url 'profile'%}"
+                        >Profile</a
+                      >
                     </li>
                     <li>
-                      <a class="dropdown-item" href="{% url 'Logout'%}"
+                      <a class="dropdown-item" href="{% url 'logout'%}"
                         >Logout</a
                       >
                     </li>
-                    <li><a class="dropdown-item" href="/Orders">Orders</a></li>
+                    <li>
+                      <a class="dropdown-item" href="{% url 'orders'%}"
+                        >Orders</a
+                      >
+                    </li>
                     <li><hr class="dropdown-divider" /></li>
                     <li><a class="dropdown-item" href="#">others</a></li>
                   </ul>
@@ -89,7 +95,9 @@
             </li>
             {% else %}
             <li class="item" id="signin">
-              <a class="signin" class="_nav-items" href="/Login">Log in</a>
+              <a class="signin" class="_nav-items" href="{% url 'login'%}"
+                >Log in</a
+              >
             </li>
 
             {% endif %}
@@ -108,7 +116,9 @@
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/">Home</a></li>
                     <li>
-                      <a class="dropdown-item" href="/Services">Services</a>
+                      <a class="dropdown-item" href="{% url 'services'%}"
+                        >Services</a
+                      >
                     </li>
                     <li><a class="dropdown-item" href="#">Orders</a></li>
                     <li><a class="dropdown-item" href="#">Contact us</a></li>
@@ -136,30 +146,34 @@
             <h4>Company</h4>
             <ul>
               <li><a href="/">home</a></li>
-              <li><a href="/Services">services</a></li>
-              <li><a href="/Orders">Order</a></li>
-              <li><a href="/Contact">Contact us</a></li>
-              <li><a href="/About">about us</a></li>
-              <li><a href="/Privacy_Policy">Privacy Policy</a></li>
-              <li><a href="/Term_Condition">Terms &amp; Condition</a></li>
-              <li><a href="/Cancelation_Policy">Cancelation-Policy</a></li>
+              <li><a href="{% url 'services'%}">services</a></li>
+              <li><a href="{% url 'orders'%}">Order</a></li>
+              <li><a href="{% url 'contact'%}">Contact us</a></li>
+              <li><a href="{% url 'about'%}">about us</a></li>
+              <li><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+              <li>
+                <a href="{% url 'terms-conditions'%}">Terms &amp; Condition</a>
+              </li>
+              <li>
+                <a href="{% url 'cancelation-policy'%}">Cancelation-Policy</a>
+              </li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>get help</h4>
             <ul>
-              <li><a href="/Services">FAQ</a></li>
-              <li><a href="/Services/Job">get job</a></li>
-              <li><a href="/Services">payments</a></li>
-              <li><a href="/Services/Projects">projects</a></li>
-              <li><a href="/Orders">order availability</a></li>
+              <li><a href="{% url 'services'%}">FAQ</a></li>
+              <li><a href="{% url 'getjob'%}">get job</a></li>
+              <li><a href="{% url 'services'%}">payments</a></li>
+              <li><a href="{% url 'projects'%}">projects</a></li>
+              <li><a href="{% url 'orders'%}">order availability</a></li>
             </ul>
           </div>
           <div class="footer-col">
             <h4>beyond</h4>
             <ul>
               {% comment %}
-              <li><a href="/Services/AI">A.I</a></li>
+              <li><a href="">{% url 'services'%}</a></li>
               <li><a href="/Services/">Courses</a></li>
               <li><a href="/Services/">Products</a></li>
               <li><a href="/Services/">Our Apps</a></li>

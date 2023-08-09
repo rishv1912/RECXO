@@ -32,7 +32,7 @@ urlpatterns = [
     path("profile/", views.profile, name="profile"),
 
     # company related
-    path("term-condition/", views.term_and_cond, name="term-condition"),
+    path("term-condition/", views.term_and_cond, name="terms-conditions"),
     path("privacy-policy/", views.priv_policy, name="privacy-policy"),
     path("cancelation-policy/", views.ord_cancel, name="cancelation-policy"),
     path("subscriptions/", views.subscription, name="subscriptions"),
