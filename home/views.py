@@ -160,7 +160,7 @@ def priv_policy(request):
 # profile related
 
 def profile(request):
-    return render(request, 'home/loginrelated/profile.html')
+    return render(request, 'home/profile.html')
 
 # APIs
 # login related
