@@ -14,27 +14,27 @@ urlpatterns = [
     path("Services/AI", views.ai, name="ai"),
 
     # login related
-    path("Login/", views.loginUser, name="Login"),
-    path("Logout/", views.logoutUser, name="Logout"),
-    path("Signup/", views.signup, name="Sign Up"),
-    path("CreateUser/", views.handleSignup, name="CreateUser"),
-    path("Login/ForgotPass", views.forpass, name="forgotpass"),
+    path("login/", views.loginUser, name="login"),
+    path("logout/", views.logoutUser, name="logout"),
+    path("signup/", views.signup, name="signup"),
+    path("createuser/", views.handleSignup, name="createuser"),
+    path("login/forgotpass", views.forpass, name="forgotpass"),
 
 
     # contact related
-    path("Contact/", views.contact, name="Contact"),
+    path("contact/", views.contact, name="contact"),
     path('savecontact/', views.contact, name='savecontact'),
 
     # order related
-    path("Orders/", views.orders, name="orders"),
-    path("orderPlace/", views.placeOrder, name="placedorder"),
+    path("orders/", views.orders, name="orders"),
+    path("orderplace/", views.placeOrder, name="orderplace"),
 
     # profile related
-    path("Profile/", views.profile, name="profile"),
+    path("profile/", views.profile, name="profile"),
 
     # company related
-    path("Term_Condition/", views.term_and_cond, name="Terms and Condition"),
-    path("Privacy_Policy/", views.priv_policy, name="Privacy Policy"),
-    path("Cancelation_Policy/", views.ord_cancel, name="cancelation-policy"),
-    path("Subscriptions/", views.subscription, name="cancelation-policy"),
+    path("term-condition/", views.term_and_cond, name="term-condition"),
+    path("privacy-policy/", views.priv_policy, name="privacy-policy"),
+    path("cancelation-policy/", views.ord_cancel, name="cancelation-policy"),
+    path("subscriptions/", views.subscription, name="subscriptions"),
 ]
