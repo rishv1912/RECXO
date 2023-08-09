@@ -1,0 +1,83 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col">
+              <h4>Company</h4>
+              <ul>
+                <li><a href="/">home</a></li>
+                <li><a href="{% url 'services'%}">services</a></li>
+                <li><a href="{% url 'orders'%}">Order</a></li>
+                <li><a href="{% url 'contact'%}">Contact us</a></li>
+                <li><a href="{% url 'about'%}">about us</a></li>
+                <li><a href="{% url 'privacy-policy' %}">Privacy Policy</a></li>
+                <li>
+                  <a href="{% url 'terms-conditions'%}">Terms &amp; Condition</a>
+                </li>
+                <li>
+                  <a href="{% url 'cancelation-policy'%}">Cancelation-Policy</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>get help</h4>
+              <ul>
+                <li><a href="{% url 'services'%}">FAQ</a></li>
+                <li><a href="{% url 'getjob'%}">get job</a></li>
+                <li><a href="{% url 'services'%}">payments</a></li>
+                <li><a href="{% url 'projects'%}">projects</a></li>
+                <li><a href="{% url 'orders'%}">order availability</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>beyond</h4>
+              <ul>
+                {% comment %}
+                <li><a href="">{% url 'services'%}</a></li>
+                <li><a href="/Services/">Courses</a></li>
+                <li><a href="/Services/">Products</a></li>
+                <li><a href="/Services/">Our Apps</a></li>
+                <li><a href="/Services/">Browser</a></li>
+                {% endcomment %}
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="{% url 'subscriptions'%}">Subscription Plan</a></li>
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>follow us</h4>
+              <div class="social-links">
+                <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+                <a href="https://twitter.com/RishavAnand1912" target="_blank"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/recxo_12/?next=%2F"
+                  target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/company/recxo/?viewAsMember=true"
+                  target="_blank"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a
+                  href="https://www.youtube.com/channel/UCtWFm2UoLmc-PsU58QYlinw"
+                  target="_blank"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">© Copyright Recxo 2023</div>
+      </footer>
+    
+</body>
+</html>

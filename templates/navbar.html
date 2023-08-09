@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/navbar.css'%}">
+</head>
+<body>
+    <nav>
+        <!-- <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fa-solid fa-bars"></i>
+        </label> -->
+        <div class="nav-items">
+          <label class="name">recxo</label>
+          <div class="nav-links">
+            <ul>
+              <li class="item"><a class="_nav-items" href="/">Home</a></li>
+  
+              <li class="item">
+                <a class="_nav-items" href="{% url 'services'%}">Services</a>
+              </li>
+              <li class="item">
+                <a class="_nav-items" href="{% url 'orders'%}">Orders</a>
+              </li>
+              <li class="item">
+                <a class="_nav-items" href="{% url 'contact'%}">Contact Us</a>
+              </li>
+              <li class="item">
+                <a class="_nav-items" href="{% url 'about'%}">About Us</a>
+              </li>
+  
+              {% if user.is_authenticated %}
+              <li id="item-dropdown">
+                <ul class="navbar-nav ml-auto mx-1">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Welcome {{request.user}}
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li>
+                        <a class="dropdown-item" href="{% url 'profile'%}"
+                          >Profile</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="{% url 'logout'%}"
+                          >Logout</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="{% url 'orders'%}"
+                          >Orders</a
+                        >
+                      </li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li><a class="dropdown-item" href="#">others</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              {% else %}
+              <li class="item" id="signin">
+                <a class="signin" class="_nav-items" href="{% url 'login'%}"
+                  >Log in</a
+                >
+              </li>
+  
+              {% endif %}
+              <li id="min-scrn-dropdown">
+                <ul class="navbar-nav ml-auto mx-1">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      Welcome {{request.user}}
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="/">Home</a></li>
+                      <li>
+                        <a class="dropdown-item" href="{% url 'services'%}"
+                          >Services</a
+                        >
+                      </li>
+                      <li><a class="dropdown-item" href="#">Orders</a></li>
+                      <li><a class="dropdown-item" href="#">Contact us</a></li>
+                      <li><a class="dropdown-item" href="#">About us</a></li>
+                      <li><hr class="dropdown-divider" /></li>
+                      <li><a class="dropdown-item" href="#">Profile</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
+    
+</body>
+</html>
