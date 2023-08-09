@@ -44,8 +44,8 @@
         <div class="nav-links">
           <ul>
             <li class="item"><a href="/">Home</a></li>
-            <li class="item"><a href="/Contact">Contact Us</a></li>
-            <li class="item"><a href="/About">About Us</a></li>
+            <li class="item"><a href="{% url 'contact'%}">Contact Us</a></li>
+            <li class="item"><a href="{% url 'about'%}">About Us</a></li>
             <li class="item">
               <form
                 class="d-flex"
@@ -84,7 +84,7 @@
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li>
-                      <a class="dropdown-item" href="{% url 'Logout'%}"
+                      <a class="dropdown-item" href="{% url 'logout'%}"
                         >Logout</a
                       >
                     </li>
@@ -97,7 +97,7 @@
             </li>
             {% else %}
             <li>
-              <a class="signin" href="/Login">Log in</a>
+              <a class="signin" href="{% url 'login'%}">Log in</a>
             </li>
 
             {% endif %}
@@ -171,11 +171,11 @@
               <a
                 href="https://www.youtube.com/channel/UCtWFm2UoLmc-PsU58QYlinw"
                 target="_blank"
+              </div>
                 ><i class="fab fa-youtube"></i
               ></a>
             </div>
           </div>
-        </div>
       </div>
       <div class="copyright">© Copyright Recxo 2023</div>
     </footer>
