@@ -113,7 +113,7 @@ def projects(request):
     return render(request, 'home/projects.html')
 
 # job related
-
+@login_required(login_url='/login')
 def job(request):
     '''this function is for rendering the job page'''
 

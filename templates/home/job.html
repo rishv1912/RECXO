@@ -21,7 +21,7 @@
   <div class="center">
     <!-- <a href="./index.html">Home</a> -->
     <h1>Get Job</h1>
-    <form method="post" action="{% url 'GetJob' %}">
+    <form method="post" action="{% url 'getjob' %}">
       {% csrf_token %}
       <div class="txt_field">
         <input type="text" name="name" required />
@@ -131,10 +131,10 @@
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/blog">Blog</a></li>
-      <li><a href="/Services/Projects">Projects</a></li>
-      <li><a href="/About">About</a></li>
-      <li><a href="/Term_Condition">Terms &amp; Conditions</a></li>
-      <li><a href="/Privacy_Policy">Privacy Policy </a></li>
+      <li><a href="{% url 'projects' %}">Projects</a></li>
+      <li><a href="{% url 'about' %}">About</a></li>
+      <li><a href="{% url 'terms-conditions' %}">Terms &amp; Conditions</a></li>
+      <li><a href="{% url 'privacy-policy' %}">Privacy Policy </a></li>
     </ul>
   </div>
 </div>
