@@ -29,12 +29,12 @@ class Software(models.Model):
 
 
 class Order(models.Model):
-    soft_name = models.ForeignKey(
+    soft_name = models.CharField(max_length=120)
+    soft_type = models.ForeignKey(
         Software, on_delete=models.SET_NULL, null=True)
-    soft_type = models.CharField(max_length=120)
     soft_time = models.CharField(max_length=120)
     soft_amount = models.CharField(max_length=120)
-    soft_desc = models.CharField(max_length=120)
+    soft_desc = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.soft_name
