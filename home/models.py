@@ -9,7 +9,8 @@ class Home(models.Model):
     con_password = models.TextField(max_length=8)
     fullname = models.TextField(max_length=20)
     username = models.TextField(max_length=20)
-    
+
+
 class Contact(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=70)
@@ -19,8 +20,17 @@ class Contact(models.Model):
     def __str__(self):
         return self.name
 
+
+class Software(models.Model):
+    softwareName = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.softwareName
+
+
 class Order(models.Model):
-    soft_name = models.CharField(max_length=120)
+    soft_name = models.ForeignKey(
+        Software, on_delete=models.SET_NULL, null=True)
     soft_type = models.CharField(max_length=120)
     soft_time = models.CharField(max_length=120)
     soft_amount = models.CharField(max_length=120)
@@ -28,6 +38,7 @@ class Order(models.Model):
 
     def __str__(self):
         return self.soft_name
+
 
 class GetJob(models.Model):
     name = models.CharField(max_length=120)
