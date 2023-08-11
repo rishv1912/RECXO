@@ -8,10 +8,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-# superuser name - recxo , email - regular, password - recxo098
-# user for experiment name - jay, password - jignesh6^^9
 
-# HTML 
+#HTML 
 def index(request):
     '''this function is for rendering the landing page'''
     # return HttpResponse('this is homepage')
@@ -172,9 +170,9 @@ def userProfile(request,pk):
 
     return render(request, 'home/profile.html',context)
 
+
 # APIs
 # login related
-
 def loginUser(request):
     '''this function is for rendering the login page and authenicating the user'''
 

@@ -2,6 +2,9 @@ from django.contrib import admin
 from home.models import Home, Contact, Order, GetJob
 # Register your models here.
 
+# superuser name - recxo , email - regular, password - recxo098
+# user for experiment name - jay, password - jignesh6^^9
+
 
 # these all classes will arrange the list shown on the django admin .
 
