@@ -163,13 +163,12 @@ def priv_policy(request):
 
 def userProfile(request,pk):
     user = User.objects.get(id=pk)
-    # rooms = user.room_set.all()
-    # room_messages = user.message_set.all()
-    # topics = Topic.objects.all()
     context = {'user': user,}
 
     return render(request, 'home/profile.html',context)
 
+def updateUserProfile(request,pk):
+    pass
 
 # APIs
 # login related

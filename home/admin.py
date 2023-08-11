@@ -6,7 +6,7 @@ from home.models import Home, Contact, Order, GetJob
 # user for experiment name - jay, password - jignesh6^^9
 
 
-# these all classes will arrange the list shown on the django admin .
+# these all classes will arrange the list shown on the django admin.
 
 class HomeAdmin(admin.ModelAdmin):
     list_display = ("fullname", "username",'email' )
