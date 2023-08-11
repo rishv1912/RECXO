@@ -32,7 +32,7 @@ def projects(request):
 
 # order related
 @login_required(login_url='/login')
-def orders(request):
+def orders(request,):
     '''this function is for rendering the order page'''
 
     # checking the user is authenicated or not 
@@ -62,7 +62,7 @@ def orders(request):
         return redirect('/')
 
 @login_required(login_url='/login')
-def placeOrder(request):
+def placeOrder(request,product_id):
     '''this is the function which we which showing all the info after placing the order '''
     return render(request, 'home/order/orderplace.html')
 

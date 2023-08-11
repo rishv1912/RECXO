@@ -19,14 +19,13 @@ urlpatterns = [
     path("createuser/", views.handleSignup, name="createuser"),
     path("login/forgotpass", views.forpass, name="forgotpass"),
 
-
     # contact related
     path("contact/", views.contact, name="contact"),
     path('savecontact/', views.contact, name='savecontact'),
 
     # order related
     path("orders/", views.orders, name="orders"),
-    path("orderplace/", views.placeOrder, name="orderplace"),
+    path("orderplace/<str:product_id>", views.placeOrder, name="orderplace"),
 
     # profile related
     path("profile/<str:pk>", views.userProfile, name="user-profile"),
