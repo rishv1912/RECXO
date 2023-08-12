@@ -68,10 +68,14 @@ def placeOrder(request,):
     form = OrderForm(request.POST)
     softwares = Softwares.objects.all()
     if request.method == 'POST':
-        software_name = request.POST.get('software_name')
-        software = Softwares.objects.all()
-        software_type = SoftwaresType.objects.get_or_create()
-        
+        company_name = request.POST.get('company_name') # name of the company or agency or organisation eg:recxo  
+        software = Softwares.objects.all() # the softwares available intially website and app
+        software_type_name = request.POST.get('software_name') # what kind of software customer wants in the app or website ,like business or personal etc.
+        software_type = SoftwareType.objects.get_or_create() # it will create the software type the user want 
+        Order.objects.create(
+            customer_name = request.user,
+            soft_name = company_name,
+        )
     
     return redirect('/')
 
