@@ -22,18 +22,19 @@ class Contact(models.Model):
         return self.name
 
 
-class Software(models.Model):
-    softwareName = models.CharField(max_length=200)
+class Softwares(models.Model):
+    software = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.softwareName
+        return self.software
+    
+class SoftwareType(models.Model):     ### this class is for what kind of softwares do the customer want . Business, education etc.
+    pass
 
 
 class Order(models.Model):
     customer_name = models.ForeignKey(User,on_delete=models.SET_NULL, null=True)
     soft_name = models.CharField(max_length=120)
-    soft_type = models.ForeignKey(
-        Software, on_delete=models.SET_NULL, null=True)
     soft_time = models.CharField(max_length=120)
     soft_amount = models.DecimalField(max_digits=10,decimal_places=2)
     soft_desc = models.TextField(null=True, blank=True)

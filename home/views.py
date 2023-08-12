@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
-from home.models import Contact, Order, GetJob
+from home.models import Contact, Order, GetJob,Softwares,SoftwareType
 from django.contrib import messages
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
@@ -65,9 +65,14 @@ def orders(request,):
 @login_required(login_url='/login')
 def placeOrder(request,):
     '''this is the function which we which showing all the info after placing the order '''
+    form = OrderForm(request.POST)
+    softwares = Softwares.objects.all()
     if request.method == 'POST':
-        form = OrderForm()
-
+        software_name = request.POST.get('software_name')
+        software = Softwares.objects.all()
+        software_type = SoftwaresType.objects.get_or_create()
+        
+    
     return redirect('/')
 
 @login_required(login_url='/login')

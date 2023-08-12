@@ -23,7 +23,7 @@ admin.site.register(Contact,ContactAdmin),
 
 
 class OrderAdmin(admin.ModelAdmin):
-    list_display = ("soft_name", "soft_type",'soft_amount' )
+    list_display = ("soft_name",'soft_amount' )
 
 
 admin.site.register(Order, OrderAdmin),
