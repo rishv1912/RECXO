@@ -19,85 +19,22 @@
   {% endfor %} {% endif %}
   <div class="sub-section2-1">
     <h1 class="intro">order</h1>
-    <form method="post" action="{% url 'orders'%}">
-      {% csrf_token %} Name/Company<input
-        type="text"
-        name="softwarename"
-        class="input"
-      />
-      <br />
-      <label for="type">Type</label>
+    
+    <div class="order_layout">
+      <form action="">
 
-      <select name="type" id="type" aria-placeholder="Type" class="input">
-        <option value="none" selected>none</option>
-        <option value="website">Website</option>
-        <option value="application">Application</option>
-      </select>
-      <!-- <br /> -->
-      <!-- <label for="specialised">Application</label>
 
-      <select
-        name="specialised"
-        id="specialised"
-        aria-placeholder="Type"
-        class="input"
-      >
-        <option value="none" selected>Business</option>
-        <option value="website">personal</option>
-        <option value="application">E-Commerce</option>
-        <option value="company">Company</option>
-        <option value="productivity">Productivity</option>
-      </select>
-      <br /> -->
 
-      <!-- <label for="specialised">Website</label>
-      <select
-        name="specialised"
-        id="specialised"
-        aria-placeholder="Type"
-        class="input"
-      >
-        <option value="busines" selected>Business</option>
-        <option value="website">personal</option>
-        <option value="application">E-Commerce</option>
-        <option value="company">Company</option>
-        <option value="productivity">Blog</option>
-        <option value="education">Education</option>
-        <option value="media">Media</option>
-        <option value="nonprofit">Non-profit</option>
-      </select> -->
 
-      <br />
-      <label for="time">Time Framework</label>
-      <select name="time" id="time" class="input">
-        <option value="none" disabled="" selected hidden="">Choose time</option>
-        <option value="1-M">1 Month</option>
-        <option value="2-M">2-3 Months</option>
-        <option value="5+M">5 Months+</option>
-      </select>
-      <br />
-      <label for="softtype">Amount</label>
-      <select name="amount" id="amount" class="input">
-        <option value="0" selected>none</option>
-        <option value="$500-$1000">$500-$1000</option>
-        <option value="$1500-$2000">$1500-$2000</option>
-        <option value="$2000-$4000">$2000-$4000</option>
-        <option value="$5000+">$5000+</option>
-        <option value="$5000+">$5000+</option>
-        <option value="$5000+">$5000+</option>
-      </select>
-      <br />
 
-      <textarea
-        name="describe"
-        id="describe"
-        class="describe"
-        cols="30"
-        rows="10"
-        placeholder="Tell more about your software"
-      ></textarea>
-      <button type="submit">submit</button>
-    </form>
+
+      </form>
+
+    </div>
+
+
+  
+    
   </div>
 </section>
 

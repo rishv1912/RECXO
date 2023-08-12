@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -29,6 +30,7 @@ class Software(models.Model):
 
 
 class Order(models.Model):
+    customer_name = models.ForeignKey(User,on_delete=models.SET_NULL, null=True)
     soft_name = models.CharField(max_length=120)
     soft_type = models.ForeignKey(
         Software, on_delete=models.SET_NULL, null=True)

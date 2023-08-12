@@ -5,6 +5,7 @@ from home.models import Contact, Order, GetJob
 from django.contrib import messages
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
+from .forms import OrderForm
 # Create your views here.
 
 
@@ -62,9 +63,12 @@ def orders(request,):
         return redirect('/')
 
 @login_required(login_url='/login')
-def placeOrder(request,product_id):
+def placeOrder(request,):
     '''this is the function which we which showing all the info after placing the order '''
-    return render(request, 'home/order/orderplace.html')
+    if request.method == 'POST':
+        form = OrderForm()
+
+    return redirect('/')
 
 @login_required(login_url='/login')
 def orderSave(request):
@@ -237,7 +241,7 @@ def handleSignup(request):
         myuser.save()
         # showing a user that you have signed up successfully
         messages.success(
-            request, 'Your recxo account has been successfully created')
+            request, 'Your recxo account has been successfully created now you can login')
         return redirect('/')
     else:
         # showing error 
