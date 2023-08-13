@@ -36,6 +36,10 @@ def projects(request):
 def orders(request,):
     '''this function is for rendering the order page'''
 
+    forms = OrderForm(request.POST)
+    softwares = Softwares.objects.all()
+    context = {'forms':forms,'softwares':softwares}
+
     # checking the user is authenicated or not 
     if request.user.is_authenticated:
     # sending the data
@@ -56,7 +60,7 @@ def orders(request,):
             messages.success(request, 'Your order has been placed')
             return redirect('placedorder')
         # rendering the orders page 
-        return render(request, 'home/order/orders.html')
+        return render(request, 'home/order/orders.html',context)
     else:
         messages.error(request, 'Please login to order ')
         # if user isn't logined then redirecting the user to the home page
@@ -65,7 +69,6 @@ def orders(request,):
 @login_required(login_url='/login')
 def placeOrder(request,):
     '''this is the function which we which showing all the info after placing the order '''
-    form = OrderForm(request.POST)
     softwares = Softwares.objects.all()
     if request.method == 'POST':
         company_name = request.POST.get('company_name') # name of the company or agency or organisation eg:recxo  
