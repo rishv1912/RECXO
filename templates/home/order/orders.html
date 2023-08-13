@@ -25,10 +25,10 @@
         {% csrf_token %} 
 
         <div class="form__group">
-          <label for="room_topic">softwares</label>
-          <input type="text" name="topic" list="topic-list" />
-          <datalist id="topic-list">
-            <select id="room__topics">
+          <label for="order_software">softwares</label>
+          <input type="text" name="topic" list="software-list" />
+          <datalist id="software-list">
+            <select id="order__software">
               {% for software in softwares %}
               <option value="{{software.name}}">{{software.name}}</option>
               {% endfor %}
@@ -36,20 +36,20 @@
           </datalist>
         </div>
 
-        <!-- <div class="form__group">
+        <div class="form__group">
           <label for="room_name">Room Name</label>
-          {{form.name}}
+          {{form.soft_name}}
         </div>
 
         <div class="form__group">
           <label for="room_name">Room Description</label>
-          {{form.description}}
+          {{form.soft_desc}}
         </div>
 
         <div class="form__action">
           <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
           <button class="btn btn--main" type="submit">Create Room</button>
-        </div> -->
+        </div>
 
       </form>
 
