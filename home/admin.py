@@ -1,5 +1,5 @@
 from django.contrib import admin
-from home.models import Home, Contact, Order, GetJob ,Softwares
+from home.models import Home, Contact, Order, GetJob ,Softwares,SoftwareType
 # Register your models here.
 
 # superuser name - recxo , email - regular, password - recxo098
@@ -37,4 +37,4 @@ admin.site.register(GetJob, JobAdmin)
 
 admin.site.register(Softwares)
 
-# admin.site.register(SoftwareType)
+admin.site.register(SoftwareType)

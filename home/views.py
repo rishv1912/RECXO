@@ -1,8 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
-from home.models import Contact, Order, GetJob, Softwares
-from django.contrib import messages
+from home.models import Contact, Order, GetJob, Softwares,SoftwareType
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
 from .forms import OrderForm
@@ -42,22 +41,23 @@ def orders(request,):
 
     forms = OrderForm(request.POST)
     softwares = Softwares.objects.all()
-
+    software_type = SoftwareType.objects.all()
     # sending the data
     if request.method == "POST":
+        software_type_name = request.POST.get('software_type')
+        software_type = SoftwareType.objects.get_or_create(software_type=software_type_name)
 
-        # softName = request.POST.get('softwarename')
-        # softType = request.POST.get('type')
-        # timeFrame = request.POST.get('time')
-        # amount = request.POST.get('amount')
-        # softInfo = request.POST.get('describe')
+        Order.objects.create(
+            customer_name = request.user,
+            soft_name = request.POST.get('name'),
+            software= request.POST.get('software'),
+            soft_time = request.POST.get('softTime'),
+            soft_amount = request.POST.get('amount'),
+            soft_desc= request.POST.get('description'),
 
-        # saving the data in order
-        # order = Order(soft_name=softName, soft_type=softType,soft_time=timeFrame, soft_amount=amount, soft_desc=softInfo)
-        # saving the object
-        # order.save()
-        # sending the message that your order has been placed
-        messages.success(request, 'Your order has been placed')
+
+        )
+        # messages.success(request, 'Your order has been placed')
         return redirect('placedorder')
     # rendering the orders page
     context = {'forms': forms, 'softwares': softwares}
