@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'Blog.apps.BlogConfig',
     'django.contrib.humanize',
+    'recxo',
 ]
 
 MIDDLEWARE = [

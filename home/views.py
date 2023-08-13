@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
-from home.models import Contact, Order, GetJob, Softwares, SoftwareType
+from home.models import Contact, Order, GetJob, Softwares
 from django.contrib import messages
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
