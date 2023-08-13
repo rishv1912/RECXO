@@ -54,8 +54,7 @@ def orders(request,):
             soft_time = request.POST.get('softTime'),
             soft_amount = request.POST.get('amount'),
             soft_desc= request.POST.get('description'),
-
-
+            soft_type = software_type
         )
         # messages.success(request, 'Your order has been placed')
         return redirect('placedorder')
