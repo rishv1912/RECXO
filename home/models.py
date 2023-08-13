@@ -29,7 +29,10 @@ class Softwares(models.Model):
         return self.software
     
 class SoftwareType(models.Model):     ### this class is for what kind of softwares do the customer want . Business, education etc.
-    pass
+    software_type = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.software_type
 
 
 class Order(models.Model):

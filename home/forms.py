@@ -6,4 +6,4 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = '__all__'
-        exclude = ['ordered_at']
+        exclude = ['ordered_at','customer_name']
