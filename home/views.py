@@ -1,7 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
-from home.models import Contact, Order, GetJob,Softwares,SoftwareType
+from home.models import Contact, Order, GetJob, Softwares, SoftwareType
 from django.contrib import messages
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
@@ -9,8 +9,7 @@ from .forms import OrderForm
 # Create your views here.
 
 
-
-#HTML 
+# HTML
 def index(request):
     '''this function is for rendering the landing page'''
     # return HttpResponse('this is homepage')
@@ -19,72 +18,81 @@ def index(request):
     context = {"variable": "this is me "}
     return render(request, 'home/index.html', context)
 
+
 def about(request):
     '''this function is for rendering the about page'''
     return render(request, 'home/aboutus.html')
 
+
 def service(request):
     '''this function is for rendering the services page'''
     return render(request, 'home/services.html')
+
 
 def projects(request):
     '''this function is for rendering the projects page'''
     return render(request, 'home/projects.html')
 
 # order related
+
+
 @login_required(login_url='/login')
 def orders(request,):
     '''this function is for rendering the order page'''
 
     forms = OrderForm(request.POST)
     softwares = Softwares.objects.all()
-    context = {'forms':forms,'softwares':softwares}
 
-    # checking the user is authenicated or not 
-    if request.user.is_authenticated:
     # sending the data
-        if request.method == "POST":
+    if request.method == "POST":
 
-            softName = request.POST.get('softwarename')
-            softType = request.POST.get('type')
-            timeFrame = request.POST.get('time')
-            amount = request.POST.get('amount')
-            softInfo = request.POST.get('describe')
+        # softName = request.POST.get('softwarename')
+        # softType = request.POST.get('type')
+        # timeFrame = request.POST.get('time')
+        # amount = request.POST.get('amount')
+        # softInfo = request.POST.get('describe')
 
-            # saving the data in order 
-            order = Order(soft_name=softName, soft_type=softType,
-                        soft_time=timeFrame, soft_amount=amount, soft_desc=softInfo)
-            # saving the object
-            order.save()
-            # sending the message that your order has been placed
-            messages.success(request, 'Your order has been placed')
-            return redirect('placedorder')
-        # rendering the orders page 
-        return render(request, 'home/order/orders.html',context)
-    else:
-        messages.error(request, 'Please login to order ')
-        # if user isn't logined then redirecting the user to the home page
-        return redirect('/')
+        # saving the data in order
+        # order = Order(soft_name=softName, soft_type=softType,soft_time=timeFrame, soft_amount=amount, soft_desc=softInfo)
+        # saving the object
+        # order.save()
+        # sending the message that your order has been placed
+        messages.success(request, 'Your order has been placed')
+        return redirect('placedorder')
+    # rendering the orders page
+    context = {'forms': forms, 'softwares': softwares}
+    return render(request, 'home/order/orders.html', context)
+    # else:
+    # messages.error(request, 'Please login to order ')
+    # if user isn't logined then redirecting the user to the home page
+    # return redirect('/')
+
 
 @login_required(login_url='/login')
 def placeOrder(request,):
     '''this is the function which we which showing all the info after placing the order '''
     softwares = Softwares.objects.all()
     if request.method == 'POST':
-        company_name = request.POST.get('company_name') # name of the company or agency or organisation eg:recxo  
-        software = Softwares.objects.all() # the softwares available intially website and app
-        software_type_name = request.POST.get('software_name') # what kind of software customer wants in the app or website ,like business or personal etc.
-        software_type = SoftwareType.objects.get_or_create() # it will create the software type the user want 
+        # name of the company or agency or organisation eg:recxo
+        company_name = request.POST.get('company_name')
+        # the softwares available intially website and app
+        software = Softwares.objects.all()
+        # what kind of software customer wants in the app or website ,like business or personal etc.
+        software_type_name = request.POST.get('software_name')
+        # it will create the software type the user want
+        software_type = SoftwareType.objects.get_or_create()
         Order.objects.create(
-            customer_name = request.user,
-            soft_name = company_name,
+            customer_name=request.user,
+            soft_name=company_name,
         )
-    
+
     return redirect('/')
+
 
 @login_required(login_url='/login')
 def orderSave(request):
     '''this function is for saving the order we'll have '''
+
 
 @login_required(login_url='/login')
 def ord_cancel(request):
@@ -93,6 +101,7 @@ def ord_cancel(request):
     return render(request, 'home/cancelation-policy.html')
 
 # contact related
+
 
 @login_required(login_url='/login')
 def contact(request):
@@ -105,10 +114,10 @@ def contact(request):
             email = request.POST.get('email')
             message = request.POST.get('message')
             contact = Contact(name=name, email=email,
-                            message=message, date=datetime.today())
-            # saving the data 
+                              message=message, date=datetime.today())
+            # saving the data
             contact.save()
-            # showing a message if the contact has been submitted successfully 
+            # showing a message if the contact has been submitted successfully
             messages.success(request, 'Success,Your message has been sent!')
         return render(request, 'home/contact.html')
     else:
@@ -118,20 +127,24 @@ def contact(request):
 
 # subscription related
 
+
 def subscription(request):
     '''this function is for rendering the subscription page'''
     return render(request, 'home/subscription.html')
+
 
 def projects(request):
     '''this function is for rendering the projects page'''
     return render(request, 'home/projects.html')
 
 # job related
+
+
 @login_required(login_url='/login')
 def job(request):
     '''this function is for rendering the job page'''
 
-    # checking the user is authenticated or not 
+    # checking the user is authenticated or not
     if request.user.is_authenticated:
         if request.method == 'POST':
             name = request.POST.get('name')
@@ -147,29 +160,33 @@ def job(request):
             skills = request.POST.get('skills')
             explain = request.POST.get('describe')
 
-            # sending the data 
+            # sending the data
             jobrequest = GetJob(name=name, UserName=UserName, email=email, phone=phoneno, education=education, qualification=qualification,
                                 address=address, your_skills=skills, ever_worked=ever_worked, jobrole=jobrole, status=status, describe=explain)
-            # saving the data 
+            # saving the data
             jobrequest.save()
-            # showing a message that your application has been submitted successfully 
+            # showing a message that your application has been submitted successfully
             messages.success(request, 'Your application has been submitted')
-        # showing the page 
+        # showing the page
         return render(request, 'home/job.html')
     else:
-         # if user is not logined the showing a message , to login to apply for a job
+        # if user is not logined the showing a message , to login to apply for a job
         messages.error(request, 'Please login to apply for a job ')
         # redirecting the user to the home page of recxo
         return redirect('/')
+
 
 def ai(request):
     '''this function is for rendering the ai page'''
     return render(request, 'ai.html')
 
 # company info related
+
+
 def term_and_cond(request):
     '''this function is for rendering the terms and condition page'''
     return render(request, 'home/term&cond.html')
+
 
 def priv_policy(request):
     '''this function is for rendering the terms and condition page'''
@@ -177,17 +194,21 @@ def priv_policy(request):
 
 # profile related
 
-def userProfile(request,pk):
+
+def userProfile(request, pk):
     user = User.objects.get(id=pk)
-    context = {'user': user,}
+    context = {'user': user, }
 
-    return render(request, 'home/profile.html',context)
+    return render(request, 'home/profile.html', context)
 
-def updateUserProfile(request,pk):
+
+def updateUserProfile(request, pk):
     pass
 
 # APIs
 # login related
+
+
 def loginUser(request):
     '''this function is for rendering the login page and authenicating the user'''
 
@@ -196,12 +217,13 @@ def loginUser(request):
         password = request.POST.get('loginPassword')
         email = request.POST.get('loginUsername')
         # check if user has entered correct credentials
-        user = authenticate(username=username, password=password,email=email)
+        user = authenticate(username=username, password=password, email=email)
 
-        # conditions logging in a user 
+        # conditions logging in a user
         if user is not None:
             login(request, user)
-            messages.success(request, f'Successfully Logged In as {request.user.username}')
+            messages.success(
+                request, f'Successfully Logged In as {request.user.username}')
             return redirect('/')
         else:
             messages.error(request, 'Login Credentials didn\'t match')
@@ -209,15 +231,18 @@ def loginUser(request):
             # return render(request, '/')
     return render(request, 'home/loginrelated/loginform2.html')
 
+
 def logoutUser(request):
     '''this function is logging out the user'''
-    # making the user logging out 
+    # making the user logging out
     logout(request)
     return redirect('/')
+
 
 def signup(request):
     '''this function is for rendering the signup page'''
     return render(request, 'home/loginrelated/signup.html')
+
 
 def handleSignup(request):
     '''this function handles the signup of user'''
@@ -256,8 +281,9 @@ def handleSignup(request):
             request, 'Your recxo account has been successfully created now you can login')
         return redirect('/')
     else:
-        # showing error 
+        # showing error
         return HttpResponse('404 - Page not found')
+
 
 def forpass(request):
     '''this function is for rendering the forgot pass page'''

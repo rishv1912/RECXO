@@ -25,18 +25,18 @@
         {% csrf_token %} 
 
         <div class="form__group">
-          <label for="room_topic">Room Topic</label>
+          <label for="room_topic">softwares</label>
           <input type="text" name="topic" list="topic-list" />
           <datalist id="topic-list">
             <select id="room__topics">
               {% for software in softwares %}
-              <option value="{{topic.name}}">{{software.software}}</option>
+              <option value="{{software.name}}">{{software.name}}</option>
               {% endfor %}
             </select>
           </datalist>
         </div>
 
-        <div class="form__group">
+        <!-- <div class="form__group">
           <label for="room_name">Room Name</label>
           {{form.name}}
         </div>
@@ -49,7 +49,7 @@
         <div class="form__action">
           <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
           <button class="btn btn--main" type="submit">Create Room</button>
-        </div>
+        </div> -->
 
       </form>
 
