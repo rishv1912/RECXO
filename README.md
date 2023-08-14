@@ -48,9 +48,9 @@ For Windows
 env\scripts\activate
 ```
 
-install the requirements:
+--> Install the requirements:
 
-Note : Use pip or pip3 according your path variable, if pip doesn't work use pip3.
+>Again use pip or pip3 according your path variable, if pip doesn't work use pip3.
 
 ```
 pip3 install -r requirement.txt
