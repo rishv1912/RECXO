@@ -16,11 +16,11 @@ cd RECXO
 ```
 
 --> Create a virtual environment:
+>You can use pip3 or pip according to your path variable
 
 For Mac
 ```
 # Let's install the virtual environment
-# You can use pip3 or pip according to your path variable
 pip3 install virtualenv
 
 # Then we create our virtual environment
@@ -59,9 +59,27 @@ pip3 install -r requirement.txt
 
 --> To run the App, we use:
 
+>You can use python3 or python according to your path variable
 ```
-# You can use python3 or python according to your path variable
 python3 manage.py runserver
 ```
 
 > Then the deployment server will start at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+## Recxo Preview
+
+![alt](static/img/recxo-preview-1.png) 
+
+## Recxo Admin
+Admin for controling the site 
+>You can access by link [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)
+![](static/img/recxo-admin-login.png)
+
+Username : recxo  
+Password : recxo098
+>Username and password is for testing purpose so it can be changed in future so revisit to check it
+
+## Admin Preview
+![](static/img/recxo-admin-panel.png)
+
+
