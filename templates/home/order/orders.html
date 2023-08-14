@@ -23,7 +23,11 @@
     <div class="order_layout">
       <form action="#" method="post" class="form">
         {% csrf_token %} 
-
+        
+        <div class="form__group">
+          <label for="soft_name">Name</label>
+          {{form.soft_name}}
+        </div>
         <div class="form__group">
           <label for="order_software">softwares</label>
           <input type="text" name="topic" list="software-list" />
@@ -36,15 +40,28 @@
           </datalist>
         </div>
 
-        <div class="form__group">
-          <label for="room_name">Name</label>
-          {{form.soft_name}}
-        </div>
 
+        
         <div class="form__group">
-          <label for="room_name">Describe</label>
+          <label for="soft_name">Describe</label>
+          {{form.soft_type}}
+        </div>
+        
+        <div class="form__group">
+          <label for="soft_name">time</label>
+          {{form.soft_time}}
+        </div>
+        
+        <div class="form__group">
+          <label for="soft_name">Amount</label>
+          {{form.soft_amount}}
+        </div>
+        
+        <div class="form__group">
+          <label for="soft_name">Describe about your software</label>
           {{form.soft_desc}}
         </div>
+        <!-- {{form}} -->
 
         <div class="form__action">
           <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>

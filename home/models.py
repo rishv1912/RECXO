@@ -23,7 +23,7 @@ class Contact(models.Model):
 
 
 class Softwares(models.Model):
-    names: str = models.CharField(max_length=200, blank=True, null=True)
+    names: str = models.CharField(max_length=200,)
 
     def __str__(self):
         return self.names

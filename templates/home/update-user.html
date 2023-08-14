@@ -29,8 +29,10 @@
         {%endfor%}
         
         <div class="form__action">
-            <a class="btn btn--dark" href="{% url 'home' %}">Back</a>
-            <button class="btn btn--main" type="submit">Update</button>
+            <a class="btn btn--dark" href="{% url 'user-profile' request.user.id %}">Back</a>
+            <a href="{% url 'user-profile' request.user.id %}">
+              <button class="btn btn--main" type="submit">Update</button>
+            </a>
         </div>
 
     </form>

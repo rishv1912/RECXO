@@ -40,7 +40,7 @@ def projects(request):
 def orders(request,):
     '''this function is for rendering the order page'''
 
-    forms: object = OrderForm(request.POST)
+    form: object = OrderForm(request.POST)
     softwares: object = Softwares.objects.all()
     software_type = SoftwareType.objects.all()
     # sending the data
@@ -61,7 +61,7 @@ def orders(request,):
         # messages.success(request, 'Your order has been placed')
         return redirect('placedorder')
     # rendering the orders page
-    context: dict = {'forms': forms, 'softwares': softwares}
+    context: dict = {'form': form, 'softwares': softwares}
     return render(request, 'home/order/orders.html', context)
     # else:
     # messages.error(request, 'Please login to order ')
@@ -89,11 +89,9 @@ def placeOrder(request,):
 
     return redirect('/')
 
-
 @login_required(login_url='/login')
 def orderSave(request):
     '''this function is for saving the order we'll have '''
-
 
 @login_required(login_url='/login')
 def ord_cancel(request):
@@ -194,6 +192,8 @@ def priv_policy(request):
 def userProfile(request, pk):
     user = User.objects.get(id=pk)
     context = {'user': user, }
+    messages.success(request, 'Your update has been made successfully')
+
 
     return render(request, 'home/profile.html', context)
 
