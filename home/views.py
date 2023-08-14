@@ -1,10 +1,10 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
-from home.models import Contact, Order, GetJob, Softwares,SoftwareType
+from home.models import Contact, Order, GetJob, Softwares, SoftwareType
 from datetime import datetime
 from django.contrib.auth.decorators import login_required
-from .forms import OrderForm
+from .forms import OrderForm,UserForm
 from django.contrib import messages
 # Create your views here.
 
@@ -15,7 +15,7 @@ def index(request):
     # return HttpResponse('this is homepage')
 
     # in context we'll be sending all the sentences we need to show in the landing page for experimenting
-    context = {"variable": "this is me "}
+    context: dict = {"variable": "this is me "}
     return render(request, 'home/index.html', context)
 
 
@@ -40,27 +40,28 @@ def projects(request):
 def orders(request,):
     '''this function is for rendering the order page'''
 
-    forms = OrderForm(request.POST)
-    softwares = Softwares.objects.all()
+    forms: object = OrderForm(request.POST)
+    softwares: object = Softwares.objects.all()
     software_type = SoftwareType.objects.all()
     # sending the data
     if request.method == "POST":
         software_type_name = request.POST.get('software_type')
-        software_type = SoftwareType.objects.get_or_create(software_type=software_type_name)
+        software_type = SoftwareType.objects.get_or_create(
+            software_type=software_type_name)
 
         Order.objects.create(
-            customer_name = request.user,
-            soft_name = request.POST.get('name'),
-            software= request.POST.get('software'),
-            soft_time = request.POST.get('softTime'),
-            soft_amount = request.POST.get('amount'),
-            soft_desc= request.POST.get('description'),
-            soft_type = software_type
+            customer_name=request.user,
+            soft_name=request.POST.get('name'),
+            software=request.POST.get('software'),
+            soft_time=request.POST.get('softTime'),
+            soft_amount=request.POST.get('amount'),
+            soft_desc=request.POST.get('description'),
+            soft_type=software_type
         )
         # messages.success(request, 'Your order has been placed')
         return redirect('placedorder')
     # rendering the orders page
-    context = {'forms': forms, 'softwares': softwares}
+    context: dict = {'forms': forms, 'softwares': softwares}
     return render(request, 'home/order/orders.html', context)
     # else:
     # messages.error(request, 'Please login to order ')
@@ -139,7 +140,6 @@ def projects(request):
 
 # job related
 
-
 @login_required(login_url='/login')
 def job(request):
     '''this function is for rendering the job page'''
@@ -175,18 +175,15 @@ def job(request):
         # redirecting the user to the home page of recxo
         return redirect('/')
 
-
 def ai(request):
     '''this function is for rendering the ai page'''
     return render(request, 'ai.html')
 
 # company info related
 
-
 def term_and_cond(request):
     '''this function is for rendering the terms and condition page'''
     return render(request, 'home/term&cond.html')
-
 
 def priv_policy(request):
     '''this function is for rendering the terms and condition page'''
@@ -194,20 +191,26 @@ def priv_policy(request):
 
 # profile related
 
-
 def userProfile(request, pk):
     user = User.objects.get(id=pk)
     context = {'user': user, }
 
     return render(request, 'home/profile.html', context)
 
+def updateUserProfile(request,pk):
+    user = request.user
+    form = UserForm(instance=user)
 
-def updateUserProfile(request, pk):
-    pass
+    if request.method =='POST':
+        form = UserForm(request.POST,instance=user)
+        if form.is_valid():
+            form.save()
+            redirect('user-profile',pk=user.id)
+        messages.success(request, 'Your update has been made successfully')
+    return render(request,'home/update-user.html',{'form':form})
 
 # APIs
 # login related
-
 
 def loginUser(request):
     '''this function is for rendering the login page and authenicating the user'''
@@ -231,18 +234,15 @@ def loginUser(request):
             # return render(request, '/')
     return render(request, 'home/loginrelated/loginform2.html')
 
-
 def logoutUser(request):
     '''this function is logging out the user'''
     # making the user logging out
     logout(request)
     return redirect('/')
 
-
 def signup(request):
     '''this function is for rendering the signup page'''
     return render(request, 'home/loginrelated/signup.html')
-
 
 def handleSignup(request):
     '''this function handles the signup of user'''
@@ -283,7 +283,6 @@ def handleSignup(request):
     else:
         # showing error
         return HttpResponse('404 - Page not found')
-
 
 def forpass(request):
     '''this function is for rendering the forgot pass page'''

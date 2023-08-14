@@ -29,6 +29,8 @@ urlpatterns = [
 
     # profile related
     path("profile/<str:pk>", views.userProfile, name="user-profile"),
+    path("update-user/<str:pk>", views.updateUserProfile, name="update-user"),
+
 
     # company related
     path("term-condition/", views.term_and_cond, name="terms-conditions"),
