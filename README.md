@@ -64,4 +64,4 @@ pip3 install -r requirement.txt
 python3 manage.py runserver
 ```
 
-> Then the deployment server will start at [127:0.0.1:8000/](127:0.0.1:8000/)
+> Then the deployment server will start at [](127:0.0.1:8000/)
