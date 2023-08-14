@@ -45,23 +45,23 @@ def orders(request,):
     software_type = SoftwareType.objects.all()
     # sending the data
     if request.method == "POST":
-        software_type_name = request.POST.get('software_type')
+        software_type_name = request.POST.get('soft_type')
         software_type = SoftwareType.objects.get_or_create(
-            software_type=software_type_name)
+            softName=software_type_name)
 
         Order.objects.create(
             customer_name=request.user,
-            soft_name=request.POST.get('name'),
+            soft_name=request.POST.get('software_name'),
             software=request.POST.get('software'),
-            soft_time=request.POST.get('softTime'),
-            soft_amount=request.POST.get('amount'),
-            soft_desc=request.POST.get('description'),
+            soft_time=request.POST.get('soft_time'),
+            soft_amount=request.POST.get('soft_amount'),
+            soft_desc=request.POST.get('soft_desc'),
             soft_type=software_type
         )
         # messages.success(request, 'Your order has been placed')
         return redirect('placedorder')
     # rendering the orders page
-    context: dict = {'form': form, 'softwares': softwares}
+    context: dict = {'form': form, 'softwares': softwares,'software_type':software_type}
     return render(request, 'home/order/orders.html', context)
     # else:
     # messages.error(request, 'Please login to order ')

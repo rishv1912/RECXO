@@ -23,16 +23,16 @@ class Contact(models.Model):
 
 
 class Softwares(models.Model):
-    names: str = models.CharField(max_length=200,)
+    names: str = models.CharField(max_length=200)
 
     def __str__(self):
         return self.names
 
 class SoftwareType(models.Model):     ### this class is for what kind of softwares do the customer want . Business, education etc.
-    software_type = models.CharField(max_length=200)
+    softName = models.CharField(max_length=200)
 
     def __str__(self):
-        return self.software_type
+        return self.softName
 
 
 class Order(models.Model):

@@ -21,7 +21,7 @@
     <h1 class="intro">order</h1>
     
     <div class="order_layout">
-      <form action="#" method="post" class="form">
+      <form action="" method="post" class="form">
         {% csrf_token %} 
         
         <div class="form__group">
@@ -29,22 +29,32 @@
           {{form.soft_name}}
         </div>
         <div class="form__group">
-          <label for="order_software">softwares</label>
-          <input type="text" name="topic" list="software-list" />
+          <label for="software">softwares</label>
+          <input type="text" name="software" list="software-list" />
           <datalist id="software-list">
-            <select id="order__software">
-              {% for software in softwares %}
-              <option value="{{software.name}}">{{software.name}}</option>
-              {% endfor %}
-            </select>
+            {{form.software}}
           </datalist>
+          <!-- {% for software in softwares %}
+            <option value="{{software.name}}">{{software.name}}</option>
+            {% endfor %} -->
+            <select id="order__software">
+              </select>
         </div>
-
-
+        
+        
         
         <div class="form__group">
-          <label for="soft_name">Describe</label>
-          {{form.soft_type}}
+          <label for="software_type">software type</label>
+          <input type="text" name="software_type" list="software-list" />
+          <!-- {{form.soft_type}} -->
+          <datalist id="software-list">
+            <select id="order__software_type">
+              <!-- {% for software in software_type %}
+              <option value="{{software.name}}">{{software.name}}</option>
+              {% endfor %} -->
+              {{form.soft_type}}
+            </select>
+          </datalist>
         </div>
         
         <div class="form__group">
