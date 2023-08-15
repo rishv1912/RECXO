@@ -37,7 +37,8 @@ manypixels
 body {
     font-family: 'Oxygen', sans-serif;
 }
-body a{
+
+body a {
     text-decoration: none;
 }
 
@@ -58,25 +59,28 @@ body a{
 }
 
 @media (max-width: 821px) {
-    .nav-items .nav-links .item{
+    .nav-items .nav-links .item {
         display: none;
     }
-    .nav-items .nav-links #item-dropdown{
+
+    .nav-items .nav-links #item-dropdown {
         display: none;
     }
-    .nav-items #min-scrn-dropdown{
+
+    .nav-items #min-scrn-dropdown {
         color: #fff;
         display: inline-block;
         position: relative;
         right: 50%;
-        top:50%;
-        visibility:visible;
+        top: 50%;
+        visibility: visible;
         margin: 0 5px;
     }
-    .nav-items .dropdown-toggle{
+
+    .nav-items .dropdown-toggle {
         position: relative;
-        top:50%;
-       
+        top: 50%;
+
     }
 
 }
