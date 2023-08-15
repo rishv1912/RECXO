@@ -27,7 +27,7 @@ nav .nav-items label.name {
 nav .nav-items {
 
     display: flex;
-    gap: 15rem;
+    /* gap: 15rem; */
     justify-content: space-around;
 }
 

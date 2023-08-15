@@ -42,7 +42,7 @@ class Order(models.Model):
     software = models.ForeignKey(
         Softwares, on_delete=models.SET_NULL, null=True)
     soft_type = models.ForeignKey(SoftwareType,on_delete=models.SET_NULL,null=True)
-    soft_time = models.CharField(max_length=120)
+    soft_time = models.DateTimeField(max_length=120)
     soft_amount = models.DecimalField(max_digits=10, decimal_places=2)
     soft_desc = models.TextField(null=True, blank=True)
     ordered_at = models.DateTimeField(auto_now_add=True)

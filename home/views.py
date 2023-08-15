@@ -206,7 +206,7 @@ def updateUserProfile(request,pk):
         if form.is_valid():
             form.save()
             redirect('user-profile',pk=user.id)
-        messages.success(request, 'Your update has been made successfully')
+    messages.success(request, 'Your update has been made successfully')
     return render(request,'home/update-user.html',{'form':form})
 
 # APIs
