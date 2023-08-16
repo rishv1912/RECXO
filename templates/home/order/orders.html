@@ -28,6 +28,7 @@
           <label for="soft_name">Name</label>
           {{form.soft_name}}
         </div>
+
         <div class="form__group">
           <label for="software">softwares</label>
           <input type="text" name="software" list="software-list" />
@@ -41,21 +42,22 @@
               </select>
         </div>
         
-        
-        
         <div class="form__group">
-          <label for="software_type">software type</label>
-          <input type="text" name="software_type" list="software-list" />
-          <!-- {{form.soft_type}} -->
+          <label for="soft_type">software type1</label>
+          <!-- <input type="text" name="soft_type" list="software-list" /> -->
+          {{form.soft_type}}
           <datalist id="software-list">
-            <select id="order__software_type">
-              <!-- {% for software in software_type %}
+            <!-- {{form.soft_type}} -->
+            <!-- <select id="order__software_type">
+              {% for software in software_type %}
               <option value="{{software.name}}">{{software.name}}</option>
               {% endfor %} -->
-              {{form.soft_type}}
+              <!-- {{form.soft_type}} -->
             </select>
           </datalist>
         </div>
+
+        
         
         <div class="form__group">
           <label for="soft_name">time</label>
@@ -71,12 +73,31 @@
           <label for="soft_name">Describe about your software</label>
           {{form.soft_desc}}
         </div>
-        <!-- {{form}} -->
 
         <div class="form__action">
           <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
           <button class="btn btn--main" type="submit">Order</button>
         </div>
+
+
+
+        <!-- <h2>
+          form 2
+        </h2>
+
+        
+        <div>
+          <label for="software_type">Software Type</label>
+          <input type="text" list="software-list" name="software">
+          <datalist id="software-list">
+            <select name="" id="software_type">
+              <option value="python">python</option>
+            </select>
+          </datalist>
+          {{form.soft_type}}
+        </div> -->
+
+        
 
       </form>
 

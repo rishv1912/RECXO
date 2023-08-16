@@ -58,11 +58,21 @@ def orders(request,):
             soft_desc=request.POST.get('soft_desc'),
             soft_type=software_type
         )
-        # messages.success(request, 'Your order has been placed')
-        return redirect('placedorder')
+        messages.success(request, 'Your order has been placed')
+
+    # form = OrderForm()
+
+    # if request.method == 'POST':
+    #     if form.is_valid():
+    #         print(request.POST)
+    #         # form.save()
+
+        return redirect('/')
     # rendering the orders page
     context: dict = {'form': form, 'softwares': softwares,'software_type':software_type}
+    # context: dict = {'form': form}
     return render(request, 'home/order/orders.html', context)
+    # return render(request, 'experiment.html', context)
     # else:
     # messages.error(request, 'Please login to order ')
     # if user isn't logined then redirecting the user to the home page
