@@ -4,72 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .container {
+        height: 200px;
+        width: 50%;
+        display: flex;
+        /* position: relative;
+        left: 50%; */
+        justify-content: center;
+        align-items: center;
+        border: 2px solid red;
+      }
+      .layout {
+        height: 150px;
+        width: 70%;
+        border: 2px solid red;
+      }
+    </style>
   </head>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 120rem;
-      width: 90%;
-      margin: auto;
-    }
-    .layout_box {
-      width: 90%;
-      max-width: 48rem;
-      min-height: 40rem;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -46%);
-      background-color: var(--color-dark);
-      border-radius: 1rem;
-      box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
-    .layout__boxHeader {
-  display: flex;
-  padding: 1.5rem;
-  background-color: var(--color-dark-light);
-}
-.layout__boxTitle {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-.layout__boxTitle h3 {
-  text-transform: uppercase;
-  font-weight: 500;
-  color: var(--color-light);
-}
-.layout__body {
-  margin: 3rem;
-}
-  </style>
-
   <body>
     <div class="container">
-      <div class="box_layout">
-        <div class="layout_boxHeader">
-            <div class="layout_boxTitle">
-
-            </div>
-
-        </div>
-        <div class="layout_body">
-            <form action="">
-
-                
-                <div class="form__action">
-                    <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
-                    <button class="btn btn--main" type="submit">Update</button>
-                </div>
-            </form>
-        </div>
-      </div>
-
+      <div class="layout"></div>
     </div>
   </body>
 </html>
