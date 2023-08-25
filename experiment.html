@@ -1,211 +1,75 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<title>Software Order Form</title>
-</head>
-<body>
-
-<h2>Software Order Form</h2>
-
-<form action="/submit_order" method="post">
-  <label for="fname">Full Name:</label><br>
-  <input type="text" id="fname" name="fname" required><br>
-  <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email" required><br>
-  <label for="address">Address:</label><br>
-  <input type="text" id="address" name="address" required><br>
-  <label for="software">Software:</label><br>
-  <select id="software" name="software">
-    <option value="software1">Software 1</option>
-    <option value="software2">Software 2</option>
-    <option value="software3">Software 3</option>
-  </select><br>
-  <input type="submit" value="Submit Order">
-</form>
-
-</body>
-</html> -->
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>Order Software</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #007bff;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            margin: 0;
-            padding: 0;
-        }
-
-        section {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-top: 30px;
-            padding: 20px;
-        }
-
-        .platform {
-            text-align: center;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 30%;
-        }
-
-        .platform img {
-            width: 100px;
-            height: 100px;
-        }
-
-        .platform h2 {
-            margin-top: 10px;
-        }
-
-        .platform p {
-            color: #666;
-        }
-
-        .order-button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .order-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Order Software</h1>
-    </header>
-    <section>
-        <div class="platform">
-            <img src="android.png" alt="Android">
-            <h2>Android App</h2>
-            <p>Order our software for Android devices. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button class="order-button">Order Now</button>
-        </div>
-        <div class="platform">
-            <img src="ios.png" alt="iOS">
-            <h2>iOS App</h2>
-            <p>Order our software for iOS devices. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button class="order-button">Order Now</button>
-        </div>
-    </section>
-</body>
-</html> -->
-
-
-<!-- user profile -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        header {
-            background-color: #35424a;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-        }
-        nav ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            overflow: hidden;
-        }
-        nav li {
-            float: left;
-            margin-right: 20px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-        }
-        section {
-            float: left;
-            width: 70%;
-            padding: 20px;
-        }
-        aside {
-            float: right;
-            width: 30%;
-            background-color: #35424a;
-            color: white;
-            padding: 20px;
-        }
-        footer {
-            clear: both;
-            background-color: #35424a;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>User Profile</h1>
-        </div>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 120rem;
+      width: 90%;
+      margin: auto;
+    }
+    .layout_box {
+      width: 90%;
+      max-width: 48rem;
+      min-height: 40rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -46%);
+      background-color: var(--color-dark);
+      border-radius: 1rem;
+      box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .layout__boxHeader {
+  display: flex;
+  padding: 1.5rem;
+  background-color: var(--color-dark-light);
+}
+.layout__boxTitle {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+.layout__boxTitle h3 {
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--color-light);
+}
+.layout__body {
+  margin: 3rem;
+}
+  </style>
+
+  <body>
     <div class="container">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-        <section>
-            <h2>About Me</h2>
-            <p>Welcome to my user profile! I'm a passionate web developer with a strong interest in creating responsive and user-friendly websites. In my free time, I enjoy learning new technologies and improving my coding skills.</p>
-        </section>
-        <aside>
-            <h2>Contact Information</h2>
-            <p>Email: user@example.com</p>
-            <p>Phone: 123-456-7890</p>
-        </aside>
-    
-    <footer>
-        <p>&copy; 2023 User Profile</p>
-    </footer>
-</body>
+      <div class="box_layout">
+        <div class="layout_boxHeader">
+            <div class="layout_boxTitle">
+
+            </div>
+
+        </div>
+        <div class="layout_body">
+            <form action="">
+
+                
+                <div class="form__action">
+                    <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
+                    <button class="btn btn--main" type="submit">Update</button>
+                </div>
+            </form>
+        </div>
+      </div>
+
+    </div>
+  </body>
 </html>
