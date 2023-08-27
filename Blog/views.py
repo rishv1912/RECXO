@@ -9,7 +9,7 @@ from django.contrib.auth import  authenticate
 def blogHome(request):
     allPosts = Post.objects.all()
     context = {'allPosts': allPosts}
-    return render(request, 'blog/blogHome.html', context)
+    return render(request, 'blog/home.html', context)
   
 def blogPost(request, slug):
     post = Post.objects.filter(slug=slug).first()

@@ -1,0 +1,17 @@
+{% extends 'blog_base.html'%}
+{% block body%}
+<style>
+  .container-blog {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+</style>
+
+<main>
+  <div class="container-blog">
+    <div class="topic" style="border: 2px solid red">topic</div>
+    <div class="blog_feed" style="border: 2px solid red">feed</div>
+    <div class="activity" style="border: 2px solid red">activity</div>
+  </div>
+</main>
+{% endblock body%}
