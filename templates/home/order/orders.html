@@ -32,17 +32,18 @@
         <div class="form__group">
           <label for="software">softwares</label>
           <input type="text" name="software" list="software-list" />
-          {{form.software}}
-          <datalist id="software-list">
-          </datalist>
+          <!-- <datalist id="software-list">
+
+            {{form.software}}
+          </datalist> -->
           <!-- {% for software in softwares %}
             <option value="{{software.name}}">{{software.name}}</option>
             {% endfor %} -->
-            <select id="order__software">
-              </select>
+            <!-- <select id="order__software">
+              </select> -->
         </div>
         
-        <div class="form__group">
+        {% comment %} <div class="form__group">
           <label for="soft_type">software type</label>
           <!-- <input type="text" name="soft_type" list="software-list" /> -->
           {{form.soft_type}}
@@ -55,15 +56,15 @@
               <!-- {{form.soft_type}} -->
             </select>
           </datalist>
-        </div>
+        </div> {% endcomment %}
 
         
         
-        <div class="form__group">
+        <!-- <div class="form__group">
           <label for="soft_name">time</label>
           {{form.soft_time}}
         </div>
-        
+         -->
         <div class="form__group">
           <label for="soft_name">Amount</label>
           {{form.soft_amount}}

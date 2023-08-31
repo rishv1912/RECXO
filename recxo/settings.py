@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'Blog.apps.BlogConfig',
     'django.contrib.humanize',
     'recxo',
 ]

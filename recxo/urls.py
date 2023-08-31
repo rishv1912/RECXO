@@ -24,5 +24,4 @@ admin.site.index_title ='Welcome to Recxo Admin Panel'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('blog/', include('Blog.urls')),
 ]

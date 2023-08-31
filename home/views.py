@@ -38,25 +38,25 @@ def projects(request):
 
 @login_required(login_url='/login')
 def orders(request,):
-    '''this function is for rendering the order page'''
-
-    form: object = OrderForm(request.POST)
-    softwares: object = Softwares.objects.all()
-    software_type = SoftwareType.objects.all()
+    '''this function is for rendering the order page and placing order'''
+    form = OrderForm(request.POST)
+    # softwares = Softwares.objects.all()
+    # software_type = SoftwareType.objects.all()
     # sending the data
     if request.method == "POST":
-        software_type_name = request.POST.get('soft_type')
-        software_type = SoftwareType.objects.get_or_create(
-            softName=software_type_name)
+        # software_type_name = request.POST.get('soft_type')
+        # software_type = SoftwareType.objects.get()
+        software = request.POST.get('software')
 
         Order.objects.create(
             customer_name=request.user,
-            soft_name=request.POST.get('software_name'),
-            software=request.POST.get('software'),
-            soft_time=request.POST.get('soft_time'),
+            soft_name=request.POST.get('soft_name'),
+            # software=request.POST.get('software'),
+            softwares=request.POST.get('software'),
+            # soft_time=request.POST.get('soft_time'),
             soft_amount=request.POST.get('soft_amount'),
             soft_desc=request.POST.get('soft_desc'),
-            soft_type=software_type
+            # soft_type=software_type
         )
         messages.success(request, 'Your order has been placed')
 
@@ -69,7 +69,7 @@ def orders(request,):
 
         return redirect('/')
     # rendering the orders page
-    context: dict = {'form': form, 'softwares': softwares,'software_type':software_type}
+    context: dict = {'form': form,}
     # context: dict = {'form': form}
     return render(request, 'home/order/orders.html', context)
     # return render(request, 'experiment.html', context)
