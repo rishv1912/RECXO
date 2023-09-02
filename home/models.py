@@ -34,7 +34,7 @@ class SoftwareType(models.Model):     ### this class is for what kind of softwar
     def __str__(self):
         return self.softName
 
-
+ 
 class Order(models.Model):
     customer_name = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True)
