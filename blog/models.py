@@ -17,6 +17,7 @@ class Blog(models.Model):
     description = models.TextField(null=True, blank=True)
     participants = models.ManyToManyField(
         User, related_name='participants', blank=True)
+    slug = models.CharField(max_length=200)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
