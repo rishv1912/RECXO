@@ -1,2 +1,24 @@
-{% extends 'blog_base.html'%}
-this is blog
+{% extends 'blog_base.html'%} this is blog {% block body%}
+<style>
+  * {
+    text-align: center;
+  }
+  #section-1 {
+      max-width: 1450px;
+  }
+  #section-1 .container1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  #section-1 .item {
+    border: 2px solid red;
+  }
+</style>
+<section id="section-1">
+  <div class="container1">
+    <div class="blog_topic item">blog_topic</div>
+    <div class="blog_feed item">blog_feed</div>
+    <div class="blog_activity item">blog_activity</div>
+  </div>
+</section>
+{% endblock body%}

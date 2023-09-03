@@ -1,5 +1,17 @@
 /* nav bar  starts*/
 
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
 nav {
     background-color: black;
     height: 90px;
@@ -46,12 +58,13 @@ nav .nav-items {
 }
 
 /* making the dropdown section different from the other li  */
-.nav-items #item-dropdown{
+.nav-items #item-dropdown {
     color: #fff;
     display: inline-block;
     margin: 0 5px;
 }
-.nav-items #item-dropdown .dropdown-menu li:hover{
+
+.nav-items #item-dropdown .dropdown-menu li:hover {
     transition: .5s;
     color: #55cb84;
 }
@@ -90,16 +103,17 @@ nav ._nav-items a:hover {
     border-radius: 0.5rem;
 
 }
-.nav-items .nav-links .hamburber{
+
+.nav-items .nav-links .hamburber {
     display: none;
-    visibility:hidden;
+    visibility: hidden;
 }
 
 /* dropdown when screen shrinks */
-.nav-items #min-scrn-dropdown{
+.nav-items #min-scrn-dropdown {
     color: #fff;
     display: inline-block;
     position: absolute;
-    visibility:hidden;
+    visibility: hidden;
     margin: 0 5px;
 }

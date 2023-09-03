@@ -1,5 +1,16 @@
 
 /* footer starts */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
 .container {
     max-width: 1170px;
     margin: auto;
