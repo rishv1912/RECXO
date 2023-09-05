@@ -10,14 +10,14 @@ class Topic(models.Model):
         return self.name
 
 
-class Blog(models.Model):
-    host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+class BlogPost(models.Model):
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
     participants = models.ManyToManyField(
         User, related_name='participants', blank=True)
-    slug = models.CharField(max_length=200)
+    # slug = models.CharField(max_length=200,null=False)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -30,7 +30,7 @@ class Blog(models.Model):
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    room = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    blog = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
     body = models.TextField()
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
