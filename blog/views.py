@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def home(request):
-    topics = Topic.objects.all()[0:4]
+    topics = Topic.objects.all()
     blogPosts = BlogPost.objects.all()
     context = {'topics':topics,'blogposts':blogPosts}
     return render(request,'blog/home.html',context)
@@ -35,12 +35,12 @@ def blog(request,pk):
     
 @login_required(login_url='/login')
 def createBlog(request):
-    form = RoomForm(request.POST)
+    # form = RoomForm(request.POST)
     topics = Topic.objects.all()
     if request.method == 'POST':
         topic_name = request.POST.get('topic')
         topic, created = Topic.objects.get_or_create(name=topic_name)
-        Room.objects.create(
+        BlogPost.objects.create(
             host=request.user,
             topic=topic,
             name=request.POST.get('name'),
@@ -54,5 +54,5 @@ def createBlog(request):
     #         form.save()
         return redirect('/')
 
-    context = {'form': form, 'topics': topics}
+    context = {'topics': topics}
     return render(request, 'base/room_form.html', context)
