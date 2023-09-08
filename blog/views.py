@@ -61,4 +61,4 @@ def createBlog(request):
         return redirect('/')
 
     context = {'topics': topics}
-    return render(request, 'base/room_form.html', context)
+    return render(request, 'blog/blog_create.html', context)
