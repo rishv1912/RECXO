@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import BlogPost,Comment,Topic
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -11,7 +12,12 @@ def home(request):
     return render(request,'blog/home.html',context)
 
 def userProfile(request,pk):
-    return render(request,'blog/profile.html')
+    user = User.objects.get(id=pk)
+    # blogs = user.blog_set.all()
+    # blog_comments = user.comments_set.all()
+    topics = Topic.objects.all()
+    context = {'user': user, 'topics': topics}
+    return render(request,'blog/profile.html',context)
     
 def blog(request,pk):
 
