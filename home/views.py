@@ -50,12 +50,12 @@ def orders(request,):
 
         Order.objects.create(
             customer_name=request.user,
-            soft_name=request.POST.get('soft_name'),
+            soft_name=request.POST.get('softName'),
             # software=request.POST.get('software'),
-            softwares=request.POST.get('software'),
+            software=request.POST.get('software'),
             # soft_time=request.POST.get('soft_time'),
-            soft_amount=request.POST.get('soft_amount'),
-            soft_desc=request.POST.get('soft_desc'),
+            soft_amount=request.POST.get('softAmount'),
+            soft_desc=request.POST.get('softDesc'),
             # soft_type=software_type
         )
         messages.success(request, 'Your order has been placed')
@@ -67,7 +67,7 @@ def orders(request,):
     #         print(request.POST)
     #         # form.save()
 
-        return redirect('/')
+        return redirect('/ordertrack/')
     # rendering the orders page
     context: dict = {'form': form,}
     # context: dict = {'form': form}
@@ -80,24 +80,9 @@ def orders(request,):
 
 
 @login_required(login_url='/login')
-def placeOrder(request,):
+def trackOrder(request):
     '''this is the function which we which showing all the info after placing the order '''
-    softwares = Softwares.objects.all()
-    if request.method == 'POST':
-        # name of the company or agency or organisation eg:recxo
-        company_name = request.POST.get('company_name')
-        # the softwares available intially website and app
-        software = Softwares.objects.all()
-        # what kind of software customer wants in the app or website ,like business or personal etc.
-        software_type_name = request.POST.get('software_name')
-        # it will create the software type the user want
-        software_type = SoftwareType.objects.get_or_create()
-        Order.objects.create(
-            customer_name=request.user,
-            soft_name=company_name,
-        )
-
-    return redirect('/')
+    return render(request,'home/order/order_track.html')
 
 @login_required(login_url='/login')
 def orderSave(request):

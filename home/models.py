@@ -38,7 +38,7 @@ class SoftwareType(models.Model):     ### this class is for what kind of softwar
 class Order(models.Model):
     customer_name = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True)
-    soft_name = models.CharField(max_length=120)
+    soft_name = models.CharField(max_length=120,null=True)
     # software = models.ForeignKey(Softwares, on_delete=models.SET_NULL, null=True)
     software = models.CharField(max_length=200,null=True)
     # soft_type = models.ForeignKey(SoftwareType,on_delete=models.SET_NULL,null=True)
