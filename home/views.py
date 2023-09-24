@@ -46,7 +46,7 @@ def orders(request,):
     if request.method == "POST":
         # software_type_name = request.POST.get('soft_type')
         # software_type = SoftwareType.objects.get()
-        software = request.POST.get('software')
+        # software = request.POST.get('software')
 
         Order.objects.create(
             customer_name=request.user,
