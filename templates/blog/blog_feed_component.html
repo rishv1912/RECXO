@@ -1,6 +1,20 @@
 <style>
-
+  .div{
+    display: flex;
+    flex-wrap: wrap;
+  }
+.blogPostBlog{
+  border: 2px solid red;
+  height: 15rem;
+  margin: 2em 3rem;
+  width: 35%;
+  background-color: rgba(64, 216, 239, 0.696);
+  
+}
 </style>
+
+<div class="div">
+  
 
 {% for blog in blogposts %}
 
@@ -20,3 +34,4 @@
   <div class="blogPostBlog__meta">{{blog.topic}}</div>
 </div>
 {% endfor %}
+</div>
