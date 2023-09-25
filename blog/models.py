@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 
@@ -14,7 +15,7 @@ class BlogPost(models.Model):
     author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200)
-    content = models.TextField(null=True, blank=True)
+    content = RichTextField(null=True, blank=True)
     participants = models.ManyToManyField(
         User, related_name='participants', blank=True)
     # slug = models.CharField(max_length=200,null=False)

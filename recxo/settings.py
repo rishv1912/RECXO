@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'django.contrib.humanize',
     'recxo',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
