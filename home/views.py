@@ -67,7 +67,7 @@ def orders(request,):
     #         print(request.POST)
     #         # form.save()
 
-        return redirect('/ordertrack/')
+        return redirect('/payment/')
     # rendering the orders page
     context: dict = {'form': form,}
     # context: dict = {'form': form}
@@ -94,6 +94,15 @@ def ord_cancel(request):
 
     return render(request, 'home/cancelation-policy.html')
 
+@login_required(login_url='/login')
+def orderPayment(request):
+    return render(request,'home/order/order_payment.html')
+
+@login_required(login_url='/login')
+def orderPaymentProcess(request):
+    pass
+    
+    
 # contact related
 
 

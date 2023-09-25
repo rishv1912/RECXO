@@ -26,6 +26,7 @@ urlpatterns = [
     # order related
     path("orders/", views.orders, name="orders"),
     path("ordertrack/", views.trackOrder, name="ordertrack"),
+    path("payment/", views.orderPayment, name="ordertrack"),
 
     # profile related
     path("profile/<str:pk>", views.userProfile, name="user-profile"),
