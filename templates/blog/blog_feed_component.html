@@ -1,3 +1,4 @@
+{% load custom_filters %}
 <style>
   .div{
     display: flex;
@@ -28,7 +29,7 @@
 
   <div class="blogPostBlog__content">
     <a href=""> {{blog.name}} </a>
-    <p>{{blog.description}}</p>
+    <p>{{blog.content|limit_characters:200}}</p>
   </div>
 
   <div class="blogPostBlog__meta">{{blog.topic}}</div>
