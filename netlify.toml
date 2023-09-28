@@ -1,9 +1,5 @@
-[build]
-command='npm run build'
-publish='/build'
-base='/'
 
 [[redirect]]
-from='/*'
+from='templates/home/'
 to='/index.html'
 status=200
