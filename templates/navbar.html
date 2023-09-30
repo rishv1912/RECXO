@@ -129,14 +129,15 @@
         </div>
         <header>
           <button id="menu-toggle" class="mobile-menu-toggle">☰</button>
-          <nav id="mobile-menu" class="mobile-menu">
+          <section id="mobile-menu" class="mobile-menu">
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="{% url 'home'%}">Home</a></li>
+              <li><a href="{% url 'about'%}">About</a></li>
+              <li><a href="{% url 'services'%}">Services</a></li>
+              <li><a href="{% url 'contact' %}">Contact</a></li>
+
             </ul>
-          </nav>
+          </section>
         </header>
       </div>
     </nav>

@@ -75,24 +75,6 @@ nav ._nav-items a:hover {
     color: #55cb84;
 }
 
-/* .nav-items .item ._nav-items a.active {
-    color: #55cb84;
-} */
-
-/* .checkbtn {
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-
-#check {
-    display: none;
-} */
-
 .item .signin {
     /* margin-left: 20rem ; */
     padding: 10px 20px;
@@ -116,4 +98,66 @@ nav ._nav-items a:hover {
     position: absolute;
     visibility: hidden;
     margin: 0 5px;
+}
+
+.mobile-menu {
+    display: none;
+
+}
+.mobile-menu a{
+    text-decoration: none;
+    color: #55cb84;
+}
+
+#menu-toggle {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.mobile-menu-toggle {
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 821px) {
+    .nav-items .nav-links .item {
+        display: none;
+    }
+
+    .nav-items .nav-links #item-dropdown {
+        display: none;
+    }
+
+    .nav-items #min-scrn-dropdown {
+        color: #fff;
+        display: inline-block;
+        position: relative;
+        right: 50%;
+        top: 50%;
+        visibility: visible;
+        margin: 0 5px;
+    }
+
+    .nav-items .dropdown-toggle {
+        position: relative;
+        top: 50%;
+
+    }
+
+    #menu-toggle {
+        display: block;
+        visibility:visible;
+    opacity: 100%;
+    }
+
+    .mobile-menu.active {
+        display: block;
+    }
+
 }
