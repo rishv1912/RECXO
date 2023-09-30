@@ -24,7 +24,7 @@ For Mac
 pip3 install virtualenv
 
 # Then we create our virtual environment
-python3 -m venv env
+python3 -m venv [name]
 ```
 
 For Windows
@@ -33,7 +33,7 @@ For Windows
 pip install virtualenv
 
 # Then we create our virtual environment
-virtual env
+virtual [name]
 ```
 
 --> Activate the virtual environment:
