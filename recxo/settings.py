@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-i!_wzp9p4-#=g%%1obzh_o321(6l$j!1m_7+e@=rigwhc@@_3%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','.now.sh']
 
 
 # Application definition
@@ -123,11 +123,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 # added manually
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
+STATICFILES_DIRS = [BASE_DIR / "static",]
 
-]
-
+# import os
+# STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles_build','static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -135,5 +134,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
-
 }
